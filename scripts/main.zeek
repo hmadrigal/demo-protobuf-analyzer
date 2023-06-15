@@ -3,6 +3,9 @@
 
 module ProtobufAnalyzer;
 
+# Enable or disable debug messages
+global ProtobufAnalyzerDebug: bool = F;
+
 # =============================== Handling gRPC text event
 
 export {
@@ -88,14 +91,23 @@ const protobuf_mime_types = {
 
 event http2_content_type(c: connection, is_orig: bool, stream: count, contentType: string)
 {
-    # print "[http2_content_type]";
-    # print "    contentType", contentType;
-    # print "    is_orig", is_orig;
-    # print "    stream", stream;
+
+@if ( ProtobufAnalyzerDebug )
+    print "[http2_content_type]";
+    print "    contentType", contentType;
+    print "    is_orig", is_orig;
+    print "    stream", stream;
+@endif
+
     
     if ( contentType in protobuf_mime_types) 
     {
-        # print "    contentType is protobuf: ", contentType;
+        
+@if ( ProtobufAnalyzerDebug )
+        print "    contentType is protobuf: ", contentType;
+@endif
+
+
         c$http2$proto = ProtoInfo();
         c$http2$proto$is_protobuf = T;
         c$http2$proto$stream = stream;
@@ -108,22 +120,29 @@ event http2_content_type(c: connection, is_orig: bool, stream: count, contentTyp
 
 event file_over_new_connection(f: fa_file, c: connection, is_orig: bool) &priority=5
 {
-    # print "[file_over_new_connection]";
+@if ( ProtobufAnalyzerDebug )
+    print "[file_over_new_connection]";
+@endif
     if ( c?$http2 )
     {
         if ( c$http2?$proto )
         {
             f$proto = c$http2$proto;
         }
-		# else
-		# {
-        #     print "    no proto info on http2 connection";
-        # }
+		else
+		{
+@if ( ProtobufAnalyzerDebug )
+            print "    no proto info on http2 connection";
+@endif
+
+        }
     }
-	# else
-	# {
-    #     print "    no http2 info on connection";
-    # }
+	else
+	{
+@if ( ProtobufAnalyzerDebug )
+        print "    no http2 info on connection";
+@endif
+    }
 
     # print "";
 
@@ -139,19 +158,27 @@ event file_sniff(f: fa_file, meta: fa_metadata) &priority=5
         if (f$proto?$is_protobuf
             && f$proto$is_protobuf == T)
         {
-            # print "PROTO FILE DETECTED!! Calling ANALYZER_PROTOBUF";
+@if ( ProtobufAnalyzerDebug )
+            print "PROTO FILE DETECTED!! Calling ANALYZER_PROTOBUF";
+@endif
+
             Files::add_analyzer(f, Files::ANALYZER_PROTOBUF);
         }
-		# else
-		# {
-        #     print "    proto info is not protobuf or is_protobuf is false";
-        # }
+		else
+		{
+@if ( ProtobufAnalyzerDebug )
+            print "    proto info is not protobuf or is_protobuf is false";
+@endif
+
+        }
 
     }
-	# else 
-	# {
-    #     print "    no proto info on file";
-    # }
+	else 
+	{
+@if ( ProtobufAnalyzerDebug )
+        print "    no proto info on file";
+@endif
+    }
 
     # print "";
 }
