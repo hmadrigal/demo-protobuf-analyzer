@@ -1,4 +1,4 @@
 ProtobufAnalyzer
 =================================
 
-TODO: tell people what your package does!
+Analyzes protocol buffer files and generates Zeek events.
