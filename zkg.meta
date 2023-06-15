@@ -4,6 +4,13 @@ build_command = ./configure && cd build && make
 test_command = cd testing && btest -c btest.cfg
 summary = Protocol Buffer File Analyzer
 description = Analyzes protocol buffer files and generates Zeek events.
+aliases = protobuf grpc
+credits = H. Madrigal <hfmad@hotmail.com>
+tags = grpc, protobuf, file analysis
+depends =
+  zeek >=5.0.8
+  zeek/mitrecnd/bro-http2 >=0.6.0
+  # https://github.com/MITRECND/bro-http2 >=0.6.0
 
 [template]
 source = https://github.com/zeek/package-template
