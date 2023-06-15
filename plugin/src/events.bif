@@ -1,0 +1,9 @@
+## This event is generated each time file analysis generates detects a string
+## in the protobuf file.
+##
+## f: The file.
+##
+## text: The detected text.
+##
+## .. zeek:see:: Files::add_analyzer Files::ANALYZER_PROTOBUF
+event protobuf_string%(f: fa_file, text: string%);
