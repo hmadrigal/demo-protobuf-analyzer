@@ -4,7 +4,7 @@
 module ProtobufAnalyzer;
 
 # Enable or disable debug messages
-global ProtobufAnalyzerDebug: bool = F;
+global ProtobufAnalyzerDebug: bool = T;
 
 # =============================== Handling gRPC text event
 
