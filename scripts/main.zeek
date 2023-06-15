@@ -184,20 +184,27 @@ event file_sniff(f: fa_file, meta: fa_metadata) &priority=5
 }
 
 # =============================== Handling gRPC text event
-# event protobuf_string(f: fa_file, text: string)
-# {
-#     # print "[protobuf_string]";
-#     # print "    text", text;
+event protobuf_string(f: fa_file, text: string)
+{
 
-#     local is_sql_injection = libinjection::is_sql_injection(text, |text|);
+@if ( ProtobufAnalyzerDebug )
+    print "[protobuf_string]";
+    print "    text", text;
+@endif
 
-#     # print "    is_sql_injection", is_sql_injection;
 
-#     # if ( is_sql_injection )
-#     # {
-#     #     print "    ===> SQL INJECTION DETECTED!! *** ";
-#     # }
+    local is_sql_injection = Demo::ProtobufAnalyzer::is_sql_injection(text, |text|);
 
-#     # print "";
+@if ( ProtobufAnalyzerDebug )
+    print "    is_sql_injection", is_sql_injection;
 
-# }
+    if ( is_sql_injection )
+    {
+        print "    ===> SQL INJECTION DETECTED!! *** ";
+    }
+
+    print "";
+@endif
+
+
+}

@@ -1,14 +1,36 @@
-module Demo::ProtobufAnalyzer;
-
 %%{
 
 // This block is for required includes, declarations, and helper functions.
+#include "libinjection/libinjection.h"
+#include "libinjection/libinjection_sqli.h"
+
+#include <cstring>
+#include <cctype>
+#include <zeek/util.h>
+#include <zeek/ZeekString.h>
+#include <zeek/Val.h>
+
+#include <iostream>
+
 
 %%}
 
+module Demo::ProtobufAnalyzer;
+
 # Built-in function implementations follow here. For help on these, see
-#
-# function foobar%(%): string
-# %{
-#	// ...
-# %}
+
+function is_sql_injection%(s: string, len: int%) : bool
+    %{
+
+        struct libinjection_sqli_state state;
+        int issqli;
+
+        const char* input =  reinterpret_cast<const char *>(s->Bytes());
+        size_t slen = strlen(input);
+
+        libinjection_sqli_init(&state, input, slen, FLAG_NONE);
+        issqli = libinjection_is_sqli(&state);
+
+        return make_intrusive<zeek::BoolVal>(issqli != 0);
+
+    %}

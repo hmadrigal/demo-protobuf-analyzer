@@ -1,4 +1,5 @@
 Demo::ProtobufAnalyzer - Prototype for a ProtocolBuf decoder. (dynamic, version)
     [File Analyzer] PROTOBUF (ANALYZER_PROTOBUF, enabled)
     [Event] protobuf_string
+    [Function] Demo::ProtobufAnalyzer::is_sql_injection
 

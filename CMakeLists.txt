@@ -24,9 +24,11 @@ set(BRO_PLUGIN_BASE "${CMAKE_CURRENT_SOURCE_DIR}/plugin")
 
 include(ZeekPlugin)
 
+include_directories(BEFORE ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/plugin/src ${CMAKE_CURRENT_SOURCE_DIR}/plugin/src/libinjection)
+
 zeek_plugin_begin(Demo ProtobufAnalyzer)
 
-file(GLOB cc_files RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}" "plugin/src/*.cc")
+file(GLOB cc_files RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}" "plugin/src/*.cc" "plugin/src/libinjection/*.c")
 foreach(file ${cc_files})
     zeek_plugin_cc(${file})
 endforeach ()
