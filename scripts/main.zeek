@@ -1,7 +1,7 @@
 # Enables http2 analyzer
 @load http2
 
-module ProtobufAnalyzer;
+module Demo::ProtobufAnalyzer;
 
 # Enable or disable debug messages
 global ProtobufAnalyzerDebug: bool = T;
@@ -152,12 +152,12 @@ event protobuf_string(f: fa_file, text: string)
 @endif
 
 
-    local is_sql_injection = Demo::ProtobufAnalyzer::is_sql_injection(text, |text|);
+    local is_sqli = Demo::ProtobufAnalyzer::is_sql_injection(text, |text|);
 
 @if ( ProtobufAnalyzerDebug )
-    print "    is_sql_injection", is_sql_injection;
+    print "    is_sql_injection", is_sqli;
 
-    if ( is_sql_injection )
+    if ( is_sqli )
     {
         print "    ===> SQL INJECTION DETECTED!! *** ";
     }
