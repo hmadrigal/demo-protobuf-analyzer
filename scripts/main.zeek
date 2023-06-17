@@ -25,62 +25,21 @@ redef record fa_file += {
     proto:          ProtoInfo  &optional;
 };
 
-const protobuf_mime_types = { 
+const protobuf_mime_types =  
     
     # https://developers.cloudflare.com/support/speed/optimization-file-size/what-will-cloudflare-compress/
-    "application/x-protobuf",
+    /^"application\/x-protobuf"/ |
     # https://groups.google.com/g/protobuf/c/VAoJ-HtgpAI
-    "application/vnd.google.protobuf",
+    /^"application\/vnd.google\.protobuf"/ |
     # https://datatracker.ietf.org/doc/html/draft-rfernando-protocol-buffers-00
-    "application/protobuf",
+    /^"application\/protobuf"/ | 
     # https://stackoverflow.com/questions/30505408/what-is-the-correct-protobuf-content-type
-    "application/octet-stream",
+    /^"application\/octet-stream"/ |
     # https://github.com/grpc/grpc/blob/master/doc/PROTOCOL-WEB.md
-    "application/grpc",
-    "application/grpc+proto",
-    "application/grpc+json",
-    "application/grpc+proto+json",
-    "application/grpc-web",
-    "application/grpc-web+proto",
-    "application/grpc-web+json",
-    "application/grpc-web+proto+json",
-    "application/grpc-web-text",
-    "application/grpc-web-text+proto",
-    "application/grpc-web-text+json",
-    "application/grpc-web-text+proto+json",
-    "application/grpc-web+proto",
-    "application/grpc-web+proto+json",
-    "application/grpc-web+proto+json",
-    "application/grpc-web+proto",
-    "application/grpc-web+proto+json",
-    "application/grpc-web+proto+json",
-    "application/grpc-web+proto",
-    "application/grpc-web+proto+json",
-    "application/grpc-web+proto+json",
-    "application/grpc-web+proto",
-    "application/grpc-web+proto+json",
-    "application/grpc-web+proto+json",
-    "application/grpc-web+proto",
-    "application/grpc-web+proto+json",
-    "application/grpc-web+proto+json",
-    "application/grpc-web+proto",
-    "application/grpc-web+proto+json",
-    "application/grpc-web+proto+json",
-    "application/grpc-web+proto",
-    "application/grpc-web+proto+json",
-    "application/grpc-web+proto+json",
-    "application/grpc-web+proto",
-    "application/grpc-web+proto+json",
-    "application/grpc-web+proto+json",
-    "application/grpc-web+proto",
-    "application/grpc-web+proto+json",
-    "application/grpc-web+proto+json",
-    "application/grpc-web+proto",
-    "application/grpc-web+proto+json",
-    "application/grpc-web+proto+json",
+    /^"application\/grpc"/ |
     # NOTE: This is not a valid mime type, but it is used in replies from the server
-    "text/plain"
- };
+    /^"text\/plain"/
+ ;
 
  event zeek_init()
 {
@@ -100,7 +59,7 @@ event http2_content_type(c: connection, is_orig: bool, stream: count, contentTyp
 @endif
 
     
-    if ( contentType in protobuf_mime_types) 
+    if ( protobuf_mime_types in contentType ) 
     {
         
 @if ( ProtobufAnalyzerDebug )
