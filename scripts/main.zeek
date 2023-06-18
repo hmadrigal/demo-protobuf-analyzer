@@ -1,6 +1,7 @@
 # Enables http2 analyzer
 @load http2
 
+# Enables file analysis
 @load base/frameworks/notice
 
 module Demo::ProtobufAnalyzer;
@@ -8,9 +9,9 @@ module Demo::ProtobufAnalyzer;
 # Enable or disable debug messages
 global ProtobufAnalyzerDebug: bool = F;
 
-# =============================== Handling gRPC text event
 
 export {
+    # record to exchange information between http2 and file analysis
 	type ProtoInfo: record 
     {
 		is_protobuf: bool &optional;
@@ -26,10 +27,27 @@ export {
         resp_p: port &optional;
 	};
 
+    # Extends HTTP2::Info record to add a ProtoInfo
+    redef record HTTP2::Info += {
+        proto:          ProtoInfo  &optional;
+    };
+
+    # Extends file_analysis::fa_file record to add a ProtoInfo
+    redef record fa_file += {
+        proto:          ProtoInfo  &optional;
+    };
+
+    # Extends Notice::Type enum to add a SQL_Injection
+    redef enum Notice::Type += {
+        SQL_Injection,
+    };
+
+    # Extends Log::ID enumer to add a PROTOBUF_LOG
     redef enum Log::ID += {
         PROTOBUF_LOG
     };
 
+    # Data structure to store protobuf log events
     type ProtobufLog: record {
         # stream: count &log;
         # Sis_orig: bool &log;
@@ -44,21 +62,10 @@ export {
         # resp_p: port &log;
     };
 
-    redef record HTTP2::Info += {
-        proto:          ProtoInfo  &optional;
-    };
-
-    redef record fa_file += {
-        proto:          ProtoInfo  &optional;
-    };
-
-    redef enum Notice::Type += {
-        SQL_Injection,
-    };
-
     global log_protobuf: event(rec: ProtobufLog);
 }
 
+# Regular expression (pattern) to detect protobuf mime types
 const protobuf_mime_types =  
     
     # https://developers.cloudflare.com/support/speed/optimization-file-size/what-will-cloudflare-compress/
@@ -77,7 +84,10 @@ const protobuf_mime_types =
 
 event zeek_init()
 {
+@if ( ProtobufAnalyzerDebug )        
 	print "ProtobufAnalyzer loaded";
+@endif
+
     Log::create_stream(PROTOBUF_LOG, [$columns=ProtobufLog, $ev=log_protobuf]);
 }
 
@@ -139,7 +149,6 @@ event http2_content_type(c: connection, is_orig: bool, stream: count, contentTyp
 
     }
 
-    # print "";
 
 }
 
@@ -169,14 +178,14 @@ event file_over_new_connection(f: fa_file, c: connection, is_orig: bool) &priori
 @endif
     }
 
-    # print "";
 
 }
 
 event file_sniff(f: fa_file, meta: fa_metadata) &priority=5
 {
-    # print "[file_sniff]";
-    Files::add_analyzer(f, Files::ANALYZER_PROTOBUF);
+@if ( ProtobufAnalyzerDebug )
+    print "[file_sniff]";
+@endif
 
 
     if (f?$proto
@@ -197,10 +206,8 @@ event file_sniff(f: fa_file, meta: fa_metadata) &priority=5
     }
 
 
-    # print "";
 }
 
-# =============================== Handling gRPC text event
 event protobuf_string(f: fa_file, text: string)
 {
 
@@ -227,17 +234,9 @@ event protobuf_string(f: fa_file, text: string)
     if ( is_sqli )
     {
 
+@if ( ProtobufAnalyzerDebug )
         print "===> SQL INJECTION DETECTED!! *** ";
-        print "    method", f$proto$method;
-        print "    host", f$proto$host;
-        print "    authority", f$proto$authority;
-        print "    original_URI", f$proto$original_URI;
-        print "    orig_h", f$proto$orig_h;
-        print "    orig_p", f$proto$orig_p;
-        print "    resp_h", f$proto$resp_h;
-        print "    resp_p", f$proto$resp_p;
-        print "    text", text;
-    
+@endif
         # Notice the user about the SQL injection
 		NOTICE( [ 
             $note=SQL_Injection, 
@@ -270,7 +269,6 @@ event protobuf_string(f: fa_file, text: string)
         Log::write(PROTOBUF_LOG, log_entry);
     }
 
-    # print "";
 
 
 }
