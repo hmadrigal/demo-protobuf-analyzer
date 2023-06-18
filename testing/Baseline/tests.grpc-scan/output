@@ -1,25 +1,3 @@
 ProtobufAnalyzer loaded
-[http2_content_type]
-    contentType, application/grpc
-    is_orig, T
-    stream, 1
-    contentType is protobuf: , application/grpc
-[file_over_new_connection]
-PROTO FILE DETECTED!! Calling ANALYZER_PROTOBUF
-[protobuf_string]
-    text, GreeterClient
-    is_sql_injection, F
-
 GreeterClient
-[http2_content_type]
-    contentType, application/grpc
-    is_orig, F
-    stream, 1
-    contentType is protobuf: , application/grpc
-[file_over_new_connection]
-PROTO FILE DETECTED!! Calling ANALYZER_PROTOBUF
-[protobuf_string]
-    text, Hello GreeterClient
-    is_sql_injection, F
-
 Hello GreeterClient

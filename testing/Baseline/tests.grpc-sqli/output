@@ -1,46 +1,7 @@
 ProtobufAnalyzer loaded
-[http2_content_type]
-    contentType, application/grpc
-    is_orig, T
-    stream, 1
-    contentType is protobuf: , application/grpc
-[file_over_new_connection]
-PROTO FILE DETECTED!! Calling ANALYZER_PROTOBUF
-[protobuf_string]
-    text, A normal day
-    is_sql_injection, F
-
-[protobuf_string]
-    text, A simple message today
-    is_sql_injection, F
-
-[http2_content_type]
-    contentType, application/grpc
-    is_orig, F
-    stream, 1
-    contentType is protobuf: , application/grpc
-[file_over_new_connection]
-[http2_content_type]
-    contentType, application/grpc
-    is_orig, T
-    stream, 1
-    contentType is protobuf: , application/grpc
-[file_over_new_connection]
-PROTO FILE DETECTED!! Calling ANALYZER_PROTOBUF
-[protobuf_string]
+===> SQL INJECTION DETECTED!! *** 
     text, -1' and 1=1 union/* foo */select load_file('/etc/passwd')--
-    is_sql_injection, T
-    ===> SQL INJECTION DETECTED!! *** 
-
-[protobuf_string]
-    text, A simple message today
-    is_sql_injection, F
-
-[http2_content_type]
-    contentType, application/grpc
-    is_orig, F
-    stream, 1
-    contentType is protobuf: , application/grpc
-[file_over_new_connection]
-PROTO FILE DETECTED!! Calling ANALYZER_PROTOBUF
-PROTO FILE DETECTED!! Calling ANALYZER_PROTOBUF
+    method, POST
+    host, 172.16.210.133
+    authority, 172.16.210.133
+    original_URI, /todo.TodoService/CreateTodoItem
