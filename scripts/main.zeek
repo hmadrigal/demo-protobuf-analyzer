@@ -1,5 +1,6 @@
 # Enables http2 analyzer
 @load http2
+
 @load base/frameworks/notice
 
 module Demo::ProtobufAnalyzer;
@@ -26,7 +27,7 @@ export {
 	};
 
     redef enum Log::ID += {
-        Demo::ProtobufAnalyzer::PROTOBUF_LOG
+        PROTOBUF_LOG
     };
 
     type ProtobufLog: record {
@@ -77,7 +78,7 @@ const protobuf_mime_types =
 event zeek_init()
 {
 	print "ProtobufAnalyzer loaded";
-    Log::create_stream(Demo::ProtobufAnalyzer::PROTOBUF_LOG, [$columns=Demo::ProtobufAnalyzer::ProtobufLog, $ev=log_protobuf]);
+    Log::create_stream(PROTOBUF_LOG, [$columns=ProtobufLog, $ev=log_protobuf]);
 }
 
 event http2_request(c: connection, is_orig: bool, stream: count, method: string, authority: string, host: string, original_URI: string, unescaped_URI: string, version: string, push: bool)
@@ -217,7 +218,7 @@ event protobuf_string(f: fa_file, text: string)
 @endif
 
 
-    local is_sqli = Demo::ProtobufAnalyzer::is_sql_injection(text, |text|);
+    local is_sqli = is_sql_injection(text, |text|);
 
 @if ( ProtobufAnalyzerDebug )
     print "    is_sql_injection", is_sqli;
@@ -255,7 +256,7 @@ event protobuf_string(f: fa_file, text: string)
         );
 
         # Adding log entry
-        local log_entry : Demo::ProtobufAnalyzer::ProtobufLog;
+        local log_entry : ProtobufLog;
         log_entry$method = f$proto$method;
         log_entry$host = f$proto$host;
         log_entry$authority = f$proto$authority;
@@ -266,8 +267,7 @@ event protobuf_string(f: fa_file, text: string)
         # log_entry$resp_p = f$proto$resp_p;
         log_entry$text = text;
         # log_entry$timestamp = network_time();
-        Log::write(Demo::ProtobufAnalyzer::PROTOBUF_LOG, log_entry);
-        print "foo";
+        Log::write(PROTOBUF_LOG, log_entry);
     }
 
     # print "";
