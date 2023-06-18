@@ -24,19 +24,39 @@ export {
         resp_h: addr &optional;
         resp_p: port &optional;
 	};
+
+    redef enum Log::ID += {
+        Demo::ProtobufAnalyzer::PROTOBUF_LOG
+    };
+
+    type ProtobufLog: record {
+        # stream: count &log;
+        # Sis_orig: bool &log;
+        method: string &log;
+        authority: string &log;
+        host: string &log;
+        original_URI: string &log;
+        text: string &log;
+        # orig_h: addr &log;
+        # orig_p: port &log;
+        # resp_h: addr &log;
+        # resp_p: port &log;
+    };
+
+    redef record HTTP2::Info += {
+        proto:          ProtoInfo  &optional;
+    };
+
+    redef record fa_file += {
+        proto:          ProtoInfo  &optional;
+    };
+
+    redef enum Notice::Type += {
+        SQL_Injection,
+    };
+
+    global log_protobuf: event(rec: ProtobufLog);
 }
-
-redef record HTTP2::Info += {
-    proto:          ProtoInfo  &optional;
-};
-
-redef record fa_file += {
-    proto:          ProtoInfo  &optional;
-};
-
-redef enum Notice::Type += {
-    SQL_Injection,
-};
 
 const protobuf_mime_types =  
     
@@ -57,6 +77,7 @@ const protobuf_mime_types =
 event zeek_init()
 {
 	print "ProtobufAnalyzer loaded";
+    Log::create_stream(Demo::ProtobufAnalyzer::PROTOBUF_LOG, [$columns=Demo::ProtobufAnalyzer::ProtobufLog, $ev=log_protobuf]);
 }
 
 event http2_request(c: connection, is_orig: bool, stream: count, method: string, authority: string, host: string, original_URI: string, unescaped_URI: string, version: string, push: bool)
@@ -232,6 +253,21 @@ event protobuf_string(f: fa_file, text: string)
                 # + "    resp_p" + f$proto$resp_p
                 , text, f$proto$method, f$proto$host, f$proto$authority, f$proto$original_URI ) ]
         );
+
+        # Adding log entry
+        local log_entry : Demo::ProtobufAnalyzer::ProtobufLog;
+        log_entry$method = f$proto$method;
+        log_entry$host = f$proto$host;
+        log_entry$authority = f$proto$authority;
+        log_entry$original_URI = f$proto$original_URI;
+        # log_entry$orig_h = f$proto$orig_h;
+        # log_entry$orig_p = f$proto$orig_p;
+        # log_entry$resp_h = f$proto$resp_h;
+        # log_entry$resp_p = f$proto$resp_p;
+        log_entry$text = text;
+        # log_entry$timestamp = network_time();
+        Log::write(Demo::ProtobufAnalyzer::PROTOBUF_LOG, log_entry);
+        print "foo";
     }
 
     # print "";
