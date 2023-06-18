@@ -1,5 +1,6 @@
 # Enables http2 analyzer
 @load http2
+@load base/frameworks/notice
 
 module Demo::ProtobufAnalyzer;
 
@@ -31,6 +32,10 @@ redef record HTTP2::Info += {
 
 redef record fa_file += {
     proto:          ProtoInfo  &optional;
+};
+
+redef enum Notice::Type += {
+    SQL_Injection,
 };
 
 const protobuf_mime_types =  
@@ -180,13 +185,14 @@ event protobuf_string(f: fa_file, text: string)
 @if ( ProtobufAnalyzerDebug )
     print "[protobuf_string]";
     print "    text", text;
-    # print "    f.proto", f$proto;
     print "    method", f$proto$method;
     print "    host", f$proto$host;
     print "    authority", f$proto$authority;
     print "    original_URI", f$proto$original_URI;
-    # print "    unescaped_URI", f$proto$unescaped_URI;
-    # print "    version", f$proto$version;
+    print "    orig_h", f$proto$orig_h;
+    print "    orig_p", f$proto$orig_p;
+    print "    resp_h", f$proto$resp_h;
+    print "    resp_p", f$proto$resp_p;
 @endif
 
 
@@ -200,21 +206,32 @@ event protobuf_string(f: fa_file, text: string)
     {
 
         print "===> SQL INJECTION DETECTED!! *** ";
-        print "    text", text;
-        # print "    f.proto", f$proto;
         print "    method", f$proto$method;
         print "    host", f$proto$host;
         print "    authority", f$proto$authority;
         print "    original_URI", f$proto$original_URI;
-        # print "    unescaped_URI", f$proto$unescaped_URI;
-        # print "    version", f$proto$version;
-                
         print "    orig_h", f$proto$orig_h;
         print "    orig_p", f$proto$orig_p;
         print "    resp_h", f$proto$resp_h;
         print "    resp_p", f$proto$resp_p;
+        print "    text", text;
     
-        # Demo::ProtobufAnalyzer::report_sql_injection(f, text, method, host, authority, original_URI, unescaped_URI, version);
+        # Notice the user about the SQL injection
+		NOTICE( [ 
+            $note=SQL_Injection, 
+            $msg=fmt(
+                "A SQL injection has been detected."
+                + "    method: %s"
+                + "    host: %s"
+                + "    authority: %s"
+                + "    original_URI: %s" 
+                + "    text: %s" 
+                # + "    orig_h" + f$proto$orig_h
+                # + "    orig_p" + f$proto$orig_p
+                # + "    resp_h" + f$proto$resp_h
+                # + "    resp_p" + f$proto$resp_p
+                , text, f$proto$method, f$proto$host, f$proto$authority, f$proto$original_URI ) ]
+        );
     }
 
     # print "";

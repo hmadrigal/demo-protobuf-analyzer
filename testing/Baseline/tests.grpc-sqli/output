@@ -1,6 +1,5 @@
 ProtobufAnalyzer loaded
 ===> SQL INJECTION DETECTED!! *** 
-    text, -1' and 1=1 union/* foo */select load_file('/etc/passwd')--
     method, POST
     host, 172.16.210.133
     authority, 172.16.210.133
@@ -9,3 +8,4 @@ ProtobufAnalyzer loaded
     orig_p, 47708/tcp
     resp_h, 172.16.210.133
     resp_p, 80/tcp
+    text, -1' and 1=1 union/* foo */select load_file('/etc/passwd')--
