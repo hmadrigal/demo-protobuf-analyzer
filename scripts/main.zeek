@@ -18,6 +18,10 @@ export {
         authority: string &optional;
         host: string &optional;
         original_URI: string &optional;
+        orig_h: addr &optional;
+        orig_p: port &optional;
+        resp_h: addr &optional;
+        resp_p: port &optional;
 	};
 }
 
@@ -72,6 +76,10 @@ event http2_request(c: connection, is_orig: bool, stream: count, method: string,
     c$http2$proto$authority = authority;
     c$http2$proto$host = host;
     c$http2$proto$original_URI = original_URI;
+    c$http2$proto$orig_h = c$id$orig_h;
+    c$http2$proto$orig_p = c$id$orig_p;
+    c$http2$proto$resp_h = c$id$resp_h;
+    c$http2$proto$resp_p = c$id$resp_p;
 }
 
 event http2_stream_end(c: connection, stream: count, stats: http2_stream_stat)
@@ -200,6 +208,11 @@ event protobuf_string(f: fa_file, text: string)
         print "    original_URI", f$proto$original_URI;
         # print "    unescaped_URI", f$proto$unescaped_URI;
         # print "    version", f$proto$version;
+                
+        print "    orig_h", f$proto$orig_h;
+        print "    orig_p", f$proto$orig_p;
+        print "    resp_h", f$proto$resp_h;
+        print "    resp_p", f$proto$resp_p;
     
         # Demo::ProtobufAnalyzer::report_sql_injection(f, text, method, host, authority, original_URI, unescaped_URI, version);
     }
