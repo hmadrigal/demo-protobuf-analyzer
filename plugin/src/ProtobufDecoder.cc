@@ -1,56 +1,16 @@
-#include "Protobuf.h"
-
+#include "ProtobufDecoder.h"
 
 namespace zeek::plugin {
 namespace Demo_ProtobufAnalyzer {
 
-		Protobuf::Protobuf(zeek::RecordValPtr args, zeek::file_analysis::File *file)
-			: zeek::file_analysis::Analyzer(zeek::file_mgr->GetComponentTag("PROTOBUF"), std::move(args), file)
-		{
+
+		ProtobufDecoder::ProtobufDecoder(zeek::file_analysis::File* file)
+			: file(file){
+				
 		}
-
-		bool Protobuf::DeliverStream(const u_char *data, uint64_t len)
-		{
-			// std::cout << "Running: Protobuf::DeliverStream segment: " << len << std::endl;
-
-			// Keeps the data in memory
-			for (uint64_t i = 0; i < len; i++)
-			{
-				u_char u = data[i];
-				buffer.push_back(u);
-				// std::cout << std::hex << std::setw(2) << std::setfill('0') << (int)u << " ";
-			}
-
-			return true;
-		}
-
-		bool Protobuf::EndOfFile()
-		{
-
-			// std::cout << "Running: Protobuf::EndOfFile size: " << buffer.size() << std::endl;
-
-			// for (uint64_t i = 0; i < buffer.size(); i++)
-			// {
-			// 	std::cout << std::hex << std::setw(2) << std::setfill('0') << (int)buffer[i] << " ";
-			// }
-
-			const auto [parts, _] = DecodeProto(buffer);
-
-			// for (auto part : parts)
-			// {
-			// 	std::cout  << "byteRange: [" << part.byteRangeStart << "," << part.byteRangeEnd << "] index: " << part.index << " type: " << part.type << " value: ";
-			// 	for (auto v : part.value)
-			// 	{
-			// 		// std::cout << std::hex << std::setw(2) << std::setfill('0') << (int)v << " ";
-			// 		std::cout << (int)v << " ";
-			// 	}
-			// }
-
-			return ProtobufDisplay(parts);
-		}
-
+		
 		std::tuple<std::vector<ProtobufPart>, std::vector<u_char>>
-		Protobuf::DecodeProto(std::vector<u_char> data)
+		ProtobufDecoder::DecodeProto(std::vector<u_char> data)
 		{
 
 			std::vector<ProtobufPart> parts;
@@ -122,7 +82,7 @@ namespace Demo_ProtobufAnalyzer {
 			return std::make_tuple(parts, leftOver);
 		}
 
-		void Protobuf::DecodeProtobufPart(ProtobufPart part)
+		void ProtobufDecoder::DecodeProtobufPart(ProtobufPart part)
 		{
 			switch (part.type)
 			{
@@ -134,14 +94,15 @@ namespace Demo_ProtobufAnalyzer {
 				if (part.value.size() > 0 && leftOver.size() == 0)
 				{
 					// part.value is likely to be a sub message
-					ProtobufDisplay(parts);
+					DecodeProto(parts);
 				}
 				else
 				{
 					// part.value is likely to be a string or bytes
 					// trigger event using value
 					const u_char *data = part.value.data();
-					zeek::event_mgr.Enqueue(protobuf_string, GetFile()->ToVal(),
+					//GetFile()->ToVal()
+					zeek::event_mgr.Enqueue(protobuf_string, file->ToVal(),
 											zeek::make_intrusive<zeek::StringVal>(
 												new zeek::String(data, part.value.size(), false)));
 				}
@@ -158,7 +119,7 @@ namespace Demo_ProtobufAnalyzer {
 			}
 		}
 
-		bool Protobuf::ProtobufDisplay(std::vector<ProtobufPart> parts)
+		bool ProtobufDecoder::DecodeProto(std::vector<ProtobufPart> parts)
 		{
 			for (ProtobufPart part : parts)
 			{
@@ -167,11 +128,7 @@ namespace Demo_ProtobufAnalyzer {
 			return true;
 		}
 
-		zeek::file_analysis::Analyzer *Protobuf::Instantiate(zeek::RecordValPtr args,
-															 zeek::file_analysis::File *file)
-		{
-			return new Protobuf(std::move(args), file);
-		}
+
 
 	}
 }

@@ -8,7 +8,7 @@ using namespace zeek::plugin::Demo_ProtobufAnalyzer;
 zeek::plugin::Configuration Plugin::Configure()
 {
 	plugin::Demo_ProtobufAnalyzer::plugin.AddComponent(new zeek::file_analysis::Component(
-		"PROTOBUF", plugin::Demo_ProtobufAnalyzer::Protobuf::Instantiate));
+		"PROTOBUF", plugin::Demo_ProtobufAnalyzer::ProtobufAnalyzer::Instantiate));
 
 	// std::cout << "Running: plugin::Demo_ProtobufAnalyzer" << std::endl;
 	

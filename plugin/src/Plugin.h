@@ -4,7 +4,7 @@
 #include <zeek/plugin/Plugin.h>
 #include <zeek/file_analysis/Component.h>
 #include <zeek/file_analysis/analyzer/extract/Extract.h>
-#include "Protobuf.h"
+#include "ProtobufAnalyzer.h"
 
 namespace zeek::plugin {
 namespace Demo_ProtobufAnalyzer {
