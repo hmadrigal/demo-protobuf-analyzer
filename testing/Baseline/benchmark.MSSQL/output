@@ -1,0 +1,24 @@
+is_sqli: F string: Title ; -- 
+is_sqli: F string: Description 1 
+is_sqli: F string: Title '; -- 
+is_sqli: F string: Description 2 
+is_sqli: F string: Title '); -- 
+is_sqli: F string: Description 3 
+is_sqli: T string: Title '; exec master..xp_cmdshell 'ping 10.10.1.2'-- 
+is_sqli: F string: Description 4 
+is_sqli: F string: Title ' grant connect to name; grant resource to name; -- 
+is_sqli: F string: Description 5 
+is_sqli: T string: Title ' or 1=1 --  
+is_sqli: F string: Description 6 
+is_sqli: T string: Title ' union (select @@version) -- 
+is_sqli: F string: Description 7 
+is_sqli: T string: Title ' union (select NULL, (select @@version)) -- 
+is_sqli: F string: Description 8 
+is_sqli: T string: Title ' union (select NULL, NULL, (select @@version)) -- 
+is_sqli: F string: Description 9 
+is_sqli: T string: Title ' union (select NULL, NULL, NULL,  (select @@version)) -- 
+is_sqli: F string: Description 10 
+is_sqli: T string: Title ' union (select NULL, NULL, NULL, NULL,  (select @@version)) -- 
+is_sqli: F string: Description 11 
+is_sqli: T string: Title ' union (select NULL, NULL, NULL, NULL,  NULL, (select @@version)) -- 
+is_sqli: F string: Description 12 

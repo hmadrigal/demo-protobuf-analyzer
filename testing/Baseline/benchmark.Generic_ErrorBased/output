@@ -1,0 +1,308 @@
+is_sqli: T string: Title  OR 1=1 
+is_sqli: F string: Description 1 
+is_sqli: T string: Title  OR 1=0 
+is_sqli: F string: Description 2 
+is_sqli: F string: Title  OR x=x 
+is_sqli: F string: Description 3 
+is_sqli: F string: Title  OR x=y 
+is_sqli: F string: Description 4 
+is_sqli: T string: Title  OR 1=1# 
+is_sqli: F string: Description 5 
+is_sqli: T string: Title  OR 1=0# 
+is_sqli: F string: Description 6 
+is_sqli: F string: Title  OR x=x# 
+is_sqli: F string: Description 7 
+is_sqli: F string: Title  OR x=y# 
+is_sqli: F string: Description 8 
+is_sqli: T string: Title  OR 1=1--  
+is_sqli: F string: Description 9 
+is_sqli: T string: Title  OR 1=0--  
+is_sqli: F string: Description 10 
+is_sqli: F string: Title  OR x=x--  
+is_sqli: F string: Description 11 
+is_sqli: F string: Title  OR x=y--  
+is_sqli: F string: Description 12 
+is_sqli: T string: Title  OR 3409=3409 AND ('pytW' LIKE 'pytW 
+is_sqli: F string: Description 13 
+is_sqli: T string: Title  OR 3409=3409 AND ('pytW' LIKE 'pytY 
+is_sqli: F string: Description 14 
+is_sqli: T string: Title  HAVING 1=1 
+is_sqli: F string: Description 15 
+is_sqli: F string: Title  HAVING 1=0 
+is_sqli: F string: Description 16 
+is_sqli: T string: Title  HAVING 1=1# 
+is_sqli: F string: Description 17 
+is_sqli: T string: Title  HAVING 1=0# 
+is_sqli: F string: Description 18 
+is_sqli: T string: Title  HAVING 1=1--  
+is_sqli: F string: Description 19 
+is_sqli: T string: Title  HAVING 1=0--  
+is_sqli: F string: Description 20 
+is_sqli: T string: Title  AND 1=1 
+is_sqli: F string: Description 21 
+is_sqli: T string: Title  AND 1=0 
+is_sqli: F string: Description 22 
+is_sqli: T string: Title  AND 1=1--  
+is_sqli: F string: Description 23 
+is_sqli: T string: Title  AND 1=0--  
+is_sqli: F string: Description 24 
+is_sqli: T string: Title  AND 1=1# 
+is_sqli: F string: Description 25 
+is_sqli: T string: Title  AND 1=0# 
+is_sqli: F string: Description 26 
+is_sqli: T string: Title  AND 1=1 AND '%'=' 
+is_sqli: F string: Description 27 
+is_sqli: T string: Title  AND 1=0 AND '%'=' 
+is_sqli: F string: Description 28 
+is_sqli: F string: Title  AND 1083=1083 AND (1427=1427 
+is_sqli: F string: Description 29 
+is_sqli: F string: Title  AND 7506=9091 AND (5913=5913 
+is_sqli: F string: Description 30 
+is_sqli: F string: Title  AND 1083=1083 AND ('1427=1427 
+is_sqli: F string: Description 31 
+is_sqli: F string: Title  AND 7506=9091 AND ('5913=5913 
+is_sqli: F string: Description 32 
+is_sqli: T string: Title  AND 7300=7300 AND 'pKlZ'='pKlZ 
+is_sqli: F string: Description 33 
+is_sqli: T string: Title  AND 7300=7300 AND 'pKlZ'='pKlY 
+is_sqli: F string: Description 34 
+is_sqli: T string: Title  AND 7300=7300 AND ('pKlZ'='pKlZ 
+is_sqli: F string: Description 35 
+is_sqli: T string: Title  AND 7300=7300 AND ('pKlZ'='pKlY 
+is_sqli: F string: Description 36 
+is_sqli: F string: Title  AS INJECTX WHERE 1=1 AND 1=1 
+is_sqli: F string: Description 37 
+is_sqli: F string: Title  AS INJECTX WHERE 1=1 AND 1=0 
+is_sqli: F string: Description 38 
+is_sqli: F string: Title  AS INJECTX WHERE 1=1 AND 1=1# 
+is_sqli: F string: Description 39 
+is_sqli: F string: Title  AS INJECTX WHERE 1=1 AND 1=0# 
+is_sqli: F string: Description 40 
+is_sqli: F string: Title  AS INJECTX WHERE 1=1 AND 1=1-- 
+is_sqli: F string: Description 41 
+is_sqli: F string: Title  AS INJECTX WHERE 1=1 AND 1=0-- 
+is_sqli: F string: Description 42 
+is_sqli: T string: Title  WHERE 1=1 AND 1=1 
+is_sqli: F string: Description 43 
+is_sqli: T string: Title  WHERE 1=1 AND 1=0 
+is_sqli: F string: Description 44 
+is_sqli: T string: Title  WHERE 1=1 AND 1=1# 
+is_sqli: F string: Description 45 
+is_sqli: T string: Title  WHERE 1=1 AND 1=0# 
+is_sqli: F string: Description 46 
+is_sqli: T string: Title  WHERE 1=1 AND 1=1-- 
+is_sqli: F string: Description 47 
+is_sqli: T string: Title  WHERE 1=1 AND 1=0-- 
+is_sqli: F string: Description 48 
+is_sqli: T string: Title  ORDER BY 1--  
+is_sqli: F string: Description 49 
+is_sqli: T string: Title  ORDER BY 2--  
+is_sqli: F string: Description 50 
+is_sqli: T string: Title  ORDER BY 3--  
+is_sqli: F string: Description 51 
+is_sqli: T string: Title  ORDER BY 4--  
+is_sqli: F string: Description 52 
+is_sqli: T string: Title  ORDER BY 5--  
+is_sqli: F string: Description 53 
+is_sqli: T string: Title  ORDER BY 6--  
+is_sqli: F string: Description 54 
+is_sqli: T string: Title  ORDER BY 7--  
+is_sqli: F string: Description 55 
+is_sqli: T string: Title  ORDER BY 8--  
+is_sqli: F string: Description 56 
+is_sqli: T string: Title  ORDER BY 9--  
+is_sqli: F string: Description 57 
+is_sqli: T string: Title  ORDER BY 10--  
+is_sqli: F string: Description 58 
+is_sqli: T string: Title  ORDER BY 11--  
+is_sqli: F string: Description 59 
+is_sqli: T string: Title  ORDER BY 12--  
+is_sqli: F string: Description 60 
+is_sqli: T string: Title  ORDER BY 13--  
+is_sqli: F string: Description 61 
+is_sqli: T string: Title  ORDER BY 14--  
+is_sqli: F string: Description 62 
+is_sqli: T string: Title  ORDER BY 15--  
+is_sqli: F string: Description 63 
+is_sqli: T string: Title  ORDER BY 16--  
+is_sqli: F string: Description 64 
+is_sqli: T string: Title  ORDER BY 17--  
+is_sqli: F string: Description 65 
+is_sqli: T string: Title  ORDER BY 18--  
+is_sqli: F string: Description 66 
+is_sqli: T string: Title  ORDER BY 19--  
+is_sqli: F string: Description 67 
+is_sqli: T string: Title  ORDER BY 20--  
+is_sqli: F string: Description 68 
+is_sqli: T string: Title  ORDER BY 21--  
+is_sqli: F string: Description 69 
+is_sqli: T string: Title  ORDER BY 22--  
+is_sqli: F string: Description 70 
+is_sqli: T string: Title  ORDER BY 23--  
+is_sqli: F string: Description 71 
+is_sqli: T string: Title  ORDER BY 24--  
+is_sqli: F string: Description 72 
+is_sqli: T string: Title  ORDER BY 25--  
+is_sqli: F string: Description 73 
+is_sqli: T string: Title  ORDER BY 26--  
+is_sqli: F string: Description 74 
+is_sqli: T string: Title  ORDER BY 27--  
+is_sqli: F string: Description 75 
+is_sqli: T string: Title  ORDER BY 28--  
+is_sqli: F string: Description 76 
+is_sqli: T string: Title  ORDER BY 29--  
+is_sqli: F string: Description 77 
+is_sqli: T string: Title  ORDER BY 30--  
+is_sqli: F string: Description 78 
+is_sqli: T string: Title  ORDER BY 31337--  
+is_sqli: F string: Description 79 
+is_sqli: T string: Title  ORDER BY 1#  
+is_sqli: F string: Description 80 
+is_sqli: T string: Title  ORDER BY 2#  
+is_sqli: F string: Description 81 
+is_sqli: T string: Title  ORDER BY 3#  
+is_sqli: F string: Description 82 
+is_sqli: T string: Title  ORDER BY 4#  
+is_sqli: F string: Description 83 
+is_sqli: T string: Title  ORDER BY 5#  
+is_sqli: F string: Description 84 
+is_sqli: T string: Title  ORDER BY 6#  
+is_sqli: F string: Description 85 
+is_sqli: T string: Title  ORDER BY 7#  
+is_sqli: F string: Description 86 
+is_sqli: T string: Title  ORDER BY 8#  
+is_sqli: F string: Description 87 
+is_sqli: T string: Title  ORDER BY 9#  
+is_sqli: F string: Description 88 
+is_sqli: T string: Title  ORDER BY 10#  
+is_sqli: F string: Description 89 
+is_sqli: T string: Title  ORDER BY 11#  
+is_sqli: F string: Description 90 
+is_sqli: T string: Title  ORDER BY 12#  
+is_sqli: F string: Description 91 
+is_sqli: T string: Title  ORDER BY 13#  
+is_sqli: F string: Description 92 
+is_sqli: T string: Title  ORDER BY 14#  
+is_sqli: F string: Description 93 
+is_sqli: T string: Title  ORDER BY 15#  
+is_sqli: F string: Description 94 
+is_sqli: T string: Title  ORDER BY 16#  
+is_sqli: F string: Description 95 
+is_sqli: T string: Title  ORDER BY 17#  
+is_sqli: F string: Description 96 
+is_sqli: T string: Title  ORDER BY 18#  
+is_sqli: F string: Description 97 
+is_sqli: T string: Title  ORDER BY 19#  
+is_sqli: F string: Description 98 
+is_sqli: T string: Title  ORDER BY 20#  
+is_sqli: F string: Description 99 
+is_sqli: T string: Title  ORDER BY 21#  
+is_sqli: F string: Description 100 
+is_sqli: T string: Title  ORDER BY 22#  
+is_sqli: F string: Description 101 
+is_sqli: T string: Title  ORDER BY 23#  
+is_sqli: F string: Description 102 
+is_sqli: T string: Title  ORDER BY 24#  
+is_sqli: F string: Description 103 
+is_sqli: T string: Title  ORDER BY 25#  
+is_sqli: F string: Description 104 
+is_sqli: T string: Title  ORDER BY 26#  
+is_sqli: F string: Description 105 
+is_sqli: T string: Title  ORDER BY 27#  
+is_sqli: F string: Description 106 
+is_sqli: T string: Title  ORDER BY 28#  
+is_sqli: F string: Description 107 
+is_sqli: T string: Title  ORDER BY 29#  
+is_sqli: F string: Description 108 
+is_sqli: T string: Title  ORDER BY 30# 
+is_sqli: F string: Description 109 
+is_sqli: T string: Title  ORDER BY 31337# 
+is_sqli: F string: Description 110 
+is_sqli: T string: Title  ORDER BY 1  
+is_sqli: F string: Description 111 
+is_sqli: T string: Title  ORDER BY 2  
+is_sqli: F string: Description 112 
+is_sqli: T string: Title  ORDER BY 3  
+is_sqli: F string: Description 113 
+is_sqli: T string: Title  ORDER BY 4  
+is_sqli: F string: Description 114 
+is_sqli: T string: Title  ORDER BY 5  
+is_sqli: F string: Description 115 
+is_sqli: T string: Title  ORDER BY 6  
+is_sqli: F string: Description 116 
+is_sqli: T string: Title  ORDER BY 7  
+is_sqli: F string: Description 117 
+is_sqli: T string: Title  ORDER BY 8  
+is_sqli: F string: Description 118 
+is_sqli: T string: Title  ORDER BY 9  
+is_sqli: F string: Description 119 
+is_sqli: T string: Title  ORDER BY 10  
+is_sqli: F string: Description 120 
+is_sqli: T string: Title  ORDER BY 11  
+is_sqli: F string: Description 121 
+is_sqli: T string: Title  ORDER BY 12  
+is_sqli: F string: Description 122 
+is_sqli: T string: Title  ORDER BY 13  
+is_sqli: F string: Description 123 
+is_sqli: T string: Title  ORDER BY 14  
+is_sqli: F string: Description 124 
+is_sqli: T string: Title  ORDER BY 15  
+is_sqli: F string: Description 125 
+is_sqli: T string: Title  ORDER BY 16  
+is_sqli: F string: Description 126 
+is_sqli: T string: Title  ORDER BY 17  
+is_sqli: F string: Description 127 
+is_sqli: T string: Title  ORDER BY 18  
+is_sqli: F string: Description 128 
+is_sqli: T string: Title  ORDER BY 19  
+is_sqli: F string: Description 129 
+is_sqli: T string: Title  ORDER BY 20  
+is_sqli: F string: Description 130 
+is_sqli: T string: Title  ORDER BY 21  
+is_sqli: F string: Description 131 
+is_sqli: T string: Title  ORDER BY 22  
+is_sqli: F string: Description 132 
+is_sqli: T string: Title  ORDER BY 23  
+is_sqli: F string: Description 133 
+is_sqli: T string: Title  ORDER BY 24  
+is_sqli: F string: Description 134 
+is_sqli: T string: Title  ORDER BY 25  
+is_sqli: F string: Description 135 
+is_sqli: T string: Title  ORDER BY 26  
+is_sqli: F string: Description 136 
+is_sqli: T string: Title  ORDER BY 27  
+is_sqli: F string: Description 137 
+is_sqli: T string: Title  ORDER BY 28  
+is_sqli: F string: Description 138 
+is_sqli: T string: Title  ORDER BY 29  
+is_sqli: F string: Description 139 
+is_sqli: T string: Title  ORDER BY 30  
+is_sqli: F string: Description 140 
+is_sqli: T string: Title  ORDER BY 31337  
+is_sqli: F string: Description 141 
+is_sqli: T string: Title  RLIKE (SELECT (CASE WHEN (4346=4346) THEN 0x61646d696e ELSE 0x28 END)) AND 'Txws'=' 
+is_sqli: F string: Description 142 
+is_sqli: T string: Title  RLIKE (SELECT (CASE WHEN (4346=4347) THEN 0x61646d696e ELSE 0x28 END)) AND 'Txws'=' 
+is_sqli: F string: Description 143 
+is_sqli: T string: Title IF(7423=7424) SELECT 7423 ELSE DROP FUNCTION xcjl-- 
+is_sqli: F string: Description 144 
+is_sqli: T string: Title IF(7423=7423) SELECT 7423 ELSE DROP FUNCTION xcjl-- 
+is_sqli: F string: Description 145 
+is_sqli: T string: Title %' AND 8310=8310 AND '%'=' 
+is_sqli: F string: Description 146 
+is_sqli: T string: Title %' AND 8310=8311 AND '%'=' 
+is_sqli: F string: Description 147 
+is_sqli: T string: Title  and (select substring(@@version,1,1))='X' 
+is_sqli: F string: Description 148 
+is_sqli: T string: Title  and (select substring(@@version,1,1))='M' 
+is_sqli: F string: Description 149 
+is_sqli: T string: Title  and (select substring(@@version,2,1))='i' 
+is_sqli: F string: Description 150 
+is_sqli: T string: Title  and (select substring(@@version,2,1))='y' 
+is_sqli: F string: Description 151 
+is_sqli: T string: Title  and (select substring(@@version,3,1))='c' 
+is_sqli: F string: Description 152 
+is_sqli: T string: Title  and (select substring(@@version,3,1))='S' 
+is_sqli: F string: Description 153 
+is_sqli: T string: Title  and (select substring(@@version,3,1))='X' 
+is_sqli: F string: Description 154 

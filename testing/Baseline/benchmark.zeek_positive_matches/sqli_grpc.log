@@ -1,0 +1,23 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	sqli_grpc
+#fields	method	authority	host	original_URI	text
+#types	string	string	string	string	string
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title /index.asp?ID='+cASt(somefield as int)+' 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title /index.asp?ID=1'+139+'0 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title /index.asp?ID='+139+'0 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title /index.cfm?ID=3%' and '%'=' 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title /index.php?mac=" OR whatever LIKE "% 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title /index.cfm?subjID=12%' and(char(94)+user+char(94))>0 and '%'=' 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title /index.php?action=&type=view&s=&id=-1' UNION SELECT 0,252381211,0,0,0,0,0/* 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title /index.php?x=browse&category='UNION SELECT '1','2','pixelpost_category_sql_injection.nasl','1183412908','5'/* 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title /index.php?id='UNION/**/SELECT/**/0,0,1648909705,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/* 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title /index.asp?file=50' and 1=1 and ''=' 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title /index.php?sort=all&&active=NO' union select 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0/* and '1'='1 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title /index.php?sort=all&&active=no' and 1=2 union select 1,'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1/* and '1'='1 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title /index.php?sort=all&&active=no' and (select count(table_name) from user_tables)>0 and '1'='1 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title /index.php' and 1=convert(int,(select top 1 table_name from information_schema.tables))--sp_password 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title /index.asp?id=100&arftype=46'\x09XoR\x09'8'='8 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title hUserId=22768&FromDate=1&ToDate=1'UNION/*!0SELECT user,2,3,4,5,6,7,8,9/*!0from/*!0mysql.user/*-&sendbutton1=Get+Statement 

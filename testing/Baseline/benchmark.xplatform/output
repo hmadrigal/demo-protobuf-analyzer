@@ -1,0 +1,386 @@
+is_sqli: F string: Title <>"'%;)(&+ 
+is_sqli: F string: Description 1 
+is_sqli: F string: Title | 
+is_sqli: F string: Description 2 
+is_sqli: F string: Title ! 
+is_sqli: F string: Description 3 
+is_sqli: F string: Title ? 
+is_sqli: F string: Description 4 
+is_sqli: F string: Title / 
+is_sqli: F string: Description 5 
+is_sqli: F string: Title // 
+is_sqli: F string: Description 6 
+is_sqli: F string: Title //* 
+is_sqli: F string: Description 7 
+is_sqli: F string: Title ' 
+is_sqli: F string: Description 8 
+is_sqli: F string: Title ' --  
+is_sqli: F string: Description 9 
+is_sqli: F string: Title ( 
+is_sqli: F string: Description 10 
+is_sqli: F string: Title ) 
+is_sqli: F string: Description 11 
+is_sqli: F string: Title *| 
+is_sqli: F string: Description 12 
+is_sqli: F string: Title */* 
+is_sqli: F string: Description 13 
+is_sqli: F string: Title & 
+is_sqli: F string: Description 14 
+is_sqli: F string: Title 0 
+is_sqli: F string: Description 15 
+is_sqli: F string: Title 031003000270000 
+is_sqli: F string: Description 16 
+is_sqli: F string: Title 0 or 1=1 
+is_sqli: F string: Description 17 
+is_sqli: F string: Title 0x730065006c00650063007400200040004000760065007200730069006f006e00 exec(@q) 
+is_sqli: F string: Description 18 
+is_sqli: F string: Title 0x770061006900740066006F0072002000640065006C00610079002000270030003A0030003A 
+is_sqli: F string: Description 19 
+is_sqli: F string: Title 0x77616974666F722064656C61792027303A303A31302700 exec(@s) 
+is_sqli: F string: Description 20 
+is_sqli: F string: Title 1;(load_file(char(47,101,116,99,47,112,97,115,115,119,100))),1,1,1; 
+is_sqli: F string: Description 21 
+is_sqli: F string: Title 1 or 1=1 
+is_sqli: F string: Description 22 
+is_sqli: F string: Title 1;SELECT%20* 
+is_sqli: F string: Description 23 
+is_sqli: F string: Title 1 waitfor delay '0:0:10'-- 
+is_sqli: F string: Description 24 
+is_sqli: F string: Title '%20or%20''=' 
+is_sqli: F string: Description 25 
+is_sqli: F string: Title '%20or%201=1 
+is_sqli: F string: Description 26 
+is_sqli: T string: Title ')%20or%20('x'='x 
+is_sqli: F string: Description 27 
+is_sqli: F string: Title '%20or%20'x'='x 
+is_sqli: F string: Description 28 
+is_sqli: F string: Title %20or%20x=x 
+is_sqli: F string: Description 29 
+is_sqli: F string: Title %20'sleep%2050' 
+is_sqli: F string: Description 30 
+is_sqli: F string: Title %20$(sleep%2050) 
+is_sqli: F string: Description 31 
+is_sqli: F string: Title %21 
+is_sqli: F string: Description 32 
+is_sqli: F string: Title 23 OR 1=1 
+is_sqli: F string: Description 33 
+is_sqli: F string: Title %26 
+is_sqli: F string: Description 34 
+is_sqli: F string: Title %27%20or%201=1 
+is_sqli: F string: Description 35 
+is_sqli: F string: Title %28 
+is_sqli: F string: Description 36 
+is_sqli: F string: Title %29 
+is_sqli: F string: Description 37 
+is_sqli: F string: Title %2A%28%7C%28mail%3D%2A%29%29 
+is_sqli: F string: Description 38 
+is_sqli: F string: Title %2A%28%7C%28objectclass%3D%2A%29%29 
+is_sqli: F string: Description 39 
+is_sqli: F string: Title %2A%7C 
+is_sqli: F string: Description 40 
+is_sqli: F string: Title ||6 
+is_sqli: F string: Description 41 
+is_sqli: T string: Title '||'6 
+is_sqli: F string: Description 42 
+is_sqli: F string: Title (||6) 
+is_sqli: F string: Description 43 
+is_sqli: F string: Title %7C 
+is_sqli: F string: Description 44 
+is_sqli: F string: Title a' 
+is_sqli: F string: Description 45 
+is_sqli: T string: Title admin' or ' 
+is_sqli: F string: Description 46 
+is_sqli: T string: Title ' and 1=( if((load_file(char(110,46,101,120,116))<>char(39,39)),1,0)); 
+is_sqli: F string: Description 47 
+is_sqli: T string: Title ' and 1 in (select var from temp)-- 
+is_sqli: F string: Description 48 
+is_sqli: T string: Title anything' OR 'x'='x 
+is_sqli: F string: Description 49 
+is_sqli: F string: Title "a"" or 1=1--" 
+is_sqli: F string: Description 50 
+is_sqli: T string: Title a' or 1=1-- 
+is_sqli: F string: Description 51 
+is_sqli: F string: Title "a"" or 3=3--" 
+is_sqli: F string: Description 52 
+is_sqli: T string: Title a' or 3=3-- 
+is_sqli: F string: Description 53 
+is_sqli: T string: Title a' or 'a' = 'a 
+is_sqli: F string: Description 54 
+is_sqli: F string: Title &apos;%20OR 
+is_sqli: F string: Description 55 
+is_sqli: F string: Title as 
+is_sqli: F string: Description 56 
+is_sqli: F string: Title asc 
+is_sqli: F string: Description 57 
+is_sqli: T string: Title a' waitfor delay '0:0:10'-- 
+is_sqli: F string: Description 58 
+is_sqli: T string: Title '; begin declare @var varchar(8000) set @var=':' select @var=@var+'+login+'/'+password+' ' from users where login >  
+is_sqli: F string: Description 59 
+is_sqli: F string: Title bfilename 
+is_sqli: F string: Description 60 
+is_sqli: F string: Title char%4039%41%2b%40SELECT 
+is_sqli: F string: Description 61 
+is_sqli: F string: Title declare @q nvarchar (200) 0x730065006c00650063007400200040004000760065007200730069006f006e00 exec(@q) 
+is_sqli: F string: Description 62 
+is_sqli: F string: Title declare @q nvarchar (200) select @q = 0x770061006900740066006F0072002000640065006C00610079002000270030003A0030003A0031003000270000 exec(@q) 
+is_sqli: F string: Description 63 
+is_sqli: F string: Title declare @q nvarchar (4000) select @q = 
+is_sqli: F string: Description 64 
+is_sqli: T string: Title declare @s varchar (200) select @s = 0x73656c65637420404076657273696f6e exec(@s) 
+is_sqli: F string: Description 65 
+is_sqli: T string: Title declare @s varchar(200) select @s = 0x77616974666F722064656C61792027303A303A31302700 exec(@s)  
+is_sqli: F string: Description 66 
+is_sqli: T string: Title declare @s varchar(22) select @s = 
+is_sqli: F string: Description 67 
+is_sqli: T string: Title declare @s varchar (8000) select @s = 0x73656c65637420404076657273696f6e 
+is_sqli: F string: Description 68 
+is_sqli: F string: Title delete 
+is_sqli: F string: Description 69 
+is_sqli: F string: Title desc 
+is_sqli: F string: Description 70 
+is_sqli: F string: Title distinct 
+is_sqli: F string: Description 71 
+is_sqli: T string: Title '||(elt(-3+5,bin(15),ord(10),hex(char(45)))) 
+is_sqli: F string: Description 72 
+is_sqli: F string: Title '; exec master..xp_cmdshell 
+is_sqli: F string: Description 73 
+is_sqli: T string: Title '; exec master..xp_cmdshell 'ping 172.10.1.255'-- 
+is_sqli: F string: Description 74 
+is_sqli: T string: Title exec(@s) 
+is_sqli: F string: Description 75 
+is_sqli: T string: Title '; exec ('sel' + 'ect us' + 'er') 
+is_sqli: F string: Description 76 
+is_sqli: F string: Title exec sp 
+is_sqli: F string: Description 77 
+is_sqli: T string: Title '; execute immediate 'sel' || 'ect us' || 'er' 
+is_sqli: F string: Description 78 
+is_sqli: F string: Title exec xp 
+is_sqli: F string: Description 79 
+is_sqli: T string: Title '; exec xp_regread 
+is_sqli: F string: Description 80 
+is_sqli: T string: Title ' group by userid having 1=1-- 
+is_sqli: F string: Description 81 
+is_sqli: F string: Title handler 
+is_sqli: F string: Description 82 
+is_sqli: F string: Title having 
+is_sqli: F string: Description 83 
+is_sqli: T string: Title ' having 1=1-- 
+is_sqli: F string: Description 84 
+is_sqli: F string: Title hi or 1=1 --" 
+is_sqli: F string: Description 85 
+is_sqli: T string: Title hi' or 1=1 -- 
+is_sqli: F string: Description 86 
+is_sqli: F string: Title "hi"") or (""a""=""a" 
+is_sqli: F string: Description 87 
+is_sqli: F string: Title hi or a=a 
+is_sqli: F string: Description 88 
+is_sqli: T string: Title hi' or 'a'='a 
+is_sqli: F string: Description 89 
+is_sqli: T string: Title hi') or ('a'='a 
+is_sqli: F string: Description 90 
+is_sqli: F string: Title 'hi' or 'x'='x'; 
+is_sqli: F string: Description 91 
+is_sqli: F string: Title insert 
+is_sqli: F string: Description 92 
+is_sqli: F string: Title like 
+is_sqli: F string: Description 93 
+is_sqli: F string: Title limit 
+is_sqli: F string: Description 94 
+is_sqli: F string: Title *(|(mail=*)) 
+is_sqli: F string: Description 95 
+is_sqli: F string: Title *(|(objectclass=*)) 
+is_sqli: F string: Description 96 
+is_sqli: F string: Title or 
+is_sqli: F string: Description 97 
+is_sqli: T string: Title ' or ''=' 
+is_sqli: F string: Description 98 
+is_sqli: T string: Title  or 0=0 #" 
+is_sqli: F string: Description 99 
+is_sqli: T string: Title ' or 0=0 -- 
+is_sqli: F string: Description 100 
+is_sqli: T string: Title ' or 0=0 # 
+is_sqli: F string: Description 101 
+is_sqli: T string: Title " or 0=0 -- 
+is_sqli: F string: Description 102 
+is_sqli: T string: Title or 0=0 -- 
+is_sqli: F string: Description 103 
+is_sqli: T string: Title or 0=0 # 
+is_sqli: F string: Description 104 
+is_sqli: T string: Title ' or 1 --' 
+is_sqli: F string: Description 105 
+is_sqli: T string: Title ' or 1/* 
+is_sqli: F string: Description 106 
+is_sqli: F string: Title ; or '1'='1' 
+is_sqli: F string: Description 107 
+is_sqli: T string: Title ' or '1'='1 
+is_sqli: F string: Description 108 
+is_sqli: T string: Title ' or '1'='1'-- 
+is_sqli: F string: Description 109 
+is_sqli: T string: Title ' or 1=1 
+is_sqli: F string: Description 110 
+is_sqli: T string: Title ' or 1=1 /* 
+is_sqli: F string: Description 111 
+is_sqli: T string: Title ' or 1=1-- 
+is_sqli: F string: Description 112 
+is_sqli: T string: Title ' or 1=1--  
+is_sqli: F string: Description 113 
+is_sqli: F string: Title '/**/or/**/1/**/=/**/1 
+is_sqli: F string: Description 114 
+is_sqli: F string: Title \xe2\x80\x98 or 1=1 -- 
+is_sqli: F string: Description 115 
+is_sqli: T string: Title " or 1=1-- 
+is_sqli: F string: Description 116 
+is_sqli: T string: Title or 1=1 
+is_sqli: F string: Description 117 
+is_sqli: T string: Title or 1=1-- 
+is_sqli: F string: Description 118 
+is_sqli: F string: Title  or 1=1 or ""= 
+is_sqli: F string: Description 119 
+is_sqli: T string: Title ' or 1=1 or ''=' 
+is_sqli: F string: Description 120 
+is_sqli: T string: Title ' or 1 in (select @@version)-- 
+is_sqli: F string: Description 121 
+is_sqli: F string: Title or%201=1 
+is_sqli: F string: Description 122 
+is_sqli: F string: Title or%201=1 -- 
+is_sqli: F string: Description 123 
+is_sqli: T string: Title ' or 2 > 1 
+is_sqli: F string: Description 124 
+is_sqli: F string: Title ' or 2 between 1 and 3 
+is_sqli: F string: Description 125 
+is_sqli: T string: Title ' or 3=3 
+is_sqli: F string: Description 126 
+is_sqli: F string: Title \xe2\x80\x98 or 3=3 -- 
+is_sqli: F string: Description 127 
+is_sqli: T string: Title ' or '7659'='7659 
+is_sqli: F string: Description 128 
+is_sqli: F string: Title  or a=a 
+is_sqli: F string: Description 129 
+is_sqli: F string: Title  or a = a 
+is_sqli: F string: Description 130 
+is_sqli: T string: Title ' or 'a'='a 
+is_sqli: F string: Description 131 
+is_sqli: T string: Title ' or a=a-- 
+is_sqli: F string: Description 132 
+is_sqli: T string: Title ') or ('a'='a 
+is_sqli: F string: Description 133 
+is_sqli: T string: Title " or "a"="a 
+is_sqli: F string: Description 134 
+is_sqli: T string: Title ) or (a=a 
+is_sqli: F string: Description 135 
+is_sqli: F string: Title order by 
+is_sqli: F string: Description 136 
+is_sqli: F string: Title ' or (EXISTS) 
+is_sqli: F string: Description 137 
+is_sqli: T string: Title  or isNULL(1/0) /* 
+is_sqli: F string: Description 138 
+is_sqli: T string: Title " or isNULL(1/0) /* 
+is_sqli: F string: Description 139 
+is_sqli: T string: Title ' or 'something' like 'some%' 
+is_sqli: F string: Description 140 
+is_sqli: T string: Title ' or 'something' = 'some'+'thing' 
+is_sqli: F string: Description 141 
+is_sqli: T string: Title ' or 'text' = n'text' 
+is_sqli: F string: Description 142 
+is_sqli: F string: Title ' or 'text' > 't' 
+is_sqli: F string: Description 143 
+is_sqli: T string: Title ' or uid like '% 
+is_sqli: F string: Description 144 
+is_sqli: T string: Title ' or uname like '% 
+is_sqli: F string: Description 145 
+is_sqli: T string: Title ' or 'unusual' = 'unusual' 
+is_sqli: F string: Description 146 
+is_sqli: T string: Title ' or userid like '% 
+is_sqli: F string: Description 147 
+is_sqli: T string: Title ' or user like '% 
+is_sqli: F string: Description 148 
+is_sqli: T string: Title ' or username like '% 
+is_sqli: F string: Description 149 
+is_sqli: T string: Title ' or username like char(37); 
+is_sqli: F string: Description 150 
+is_sqli: T string: Title ' or 'whatever' in ('whatever') 
+is_sqli: F string: Description 151 
+is_sqli: F string: Title ' -- &password= 
+is_sqli: F string: Description 152 
+is_sqli: F string: Title password:*/=1-- 
+is_sqli: F string: Description 153 
+is_sqli: F string: Title PRINT 
+is_sqli: F string: Description 154 
+is_sqli: F string: Title PRINT @@variable 
+is_sqli: F string: Description 155 
+is_sqli: F string: Title procedure 
+is_sqli: F string: Description 156 
+is_sqli: F string: Title replace 
+is_sqli: F string: Description 157 
+is_sqli: F string: Title select 
+is_sqli: F string: Description 158 
+is_sqli: T string: Title ' select * from information_schema.tables-- 
+is_sqli: F string: Description 159 
+is_sqli: F string: Title ' select name from syscolumns where id = (select id from sysobjects where name = tablename')-- 
+is_sqli: F string: Description 160 
+is_sqli: F string: Title ' (select top 1 
+is_sqli: F string: Description 161 
+is_sqli: T string: Title --sp_password 
+is_sqli: F string: Description 162 
+is_sqli: F string: Title 'sqlattempt1 
+is_sqli: F string: Description 163 
+is_sqli: F string: Title (sqlattempt2) 
+is_sqli: F string: Description 164 
+is_sqli: F string: Title 'sqlvuln 
+is_sqli: F string: Description 165 
+is_sqli: F string: Title '+sqlvuln 
+is_sqli: F string: Description 166 
+is_sqli: F string: Title (sqlvuln) 
+is_sqli: F string: Description 167 
+is_sqli: F string: Title sqlvuln; 
+is_sqli: F string: Description 168 
+is_sqli: T string: Title t'exec master..xp_cmdshell 'nslookup www.google.com'-- 
+is_sqli: F string: Description 169 
+is_sqli: F string: Title to_timestamp_tz 
+is_sqli: F string: Description 170 
+is_sqli: F string: Title truncate 
+is_sqli: F string: Description 171 
+is_sqli: F string: Title tz_offset 
+is_sqli: F string: Description 172 
+is_sqli: T string: Title ' UNION ALL SELECT 
+is_sqli: F string: Description 173 
+is_sqli: T string: Title ' union all select @@version-- 
+is_sqli: F string: Description 174 
+is_sqli: T string: Title ' union select  
+is_sqli: F string: Description 175 
+is_sqli: F string: Title uni/**/on sel/**/ect 
+is_sqli: F string: Description 176 
+is_sqli: T string: Title ' UNION SELECT 
+is_sqli: F string: Description 177 
+is_sqli: T string: Title ' union select 1,load_file('/etc/passwd'),1,1,1; 
+is_sqli: F string: Description 178 
+is_sqli: F string: Title ) union select * from information_schema.tables; 
+is_sqli: F string: Description 179 
+is_sqli: T string: Title ' union select * from users where login = char(114,111,111,116); 
+is_sqli: F string: Description 180 
+is_sqli: F string: Title update 
+is_sqli: F string: Description 181 
+is_sqli: F string: Title '||UTL_HTTP.REQUEST 
+is_sqli: F string: Description 182 
+is_sqli: F string: Title ,@variable 
+is_sqli: F string: Description 183 
+is_sqli: F string: Title @variable 
+is_sqli: F string: Description 184 
+is_sqli: F string: Title @var select @var as var into temp end -- 
+is_sqli: F string: Description 185 
+is_sqli: F string: Title \x27UNION SELECT 
+is_sqli: F string: Description 186 
+is_sqli: T string: Title x' AND 1=(SELECT COUNT(*) FROM tabname); -- 
+is_sqli: F string: Description 187 
+is_sqli: T string: Title x' AND email IS NULL; -- 
+is_sqli: F string: Description 188 
+is_sqli: T string: Title x' AND members.email IS NULL; -- 
+is_sqli: F string: Description 189 
+is_sqli: T string: Title x' AND userid IS NULL; -- 
+is_sqli: F string: Description 190 
+is_sqli: T string: Title x' or 1=1 or 'x'='y 
+is_sqli: F string: Description 191 
+is_sqli: T string: Title x' OR full_name LIKE '%Bob% 
+is_sqli: F string: Description 192 
+is_sqli: F string: Title \xc3\xbd or 1=1 -- 
+is_sqli: F string: Description 193 

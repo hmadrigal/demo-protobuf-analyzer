@@ -1,0 +1,18 @@
+is_sqli: F string: Title 1 
+is_sqli: F string: Description 1 
+is_sqli: F string: Title 1 and user_name() = 'dbo' 
+is_sqli: F string: Description 2 
+is_sqli: F string: Title \'; desc users; -- 
+is_sqli: F string: Description 3 
+is_sqli: F string: Title 1\'1 
+is_sqli: F string: Description 4 
+is_sqli: T string: Title 1' and non_existant_table = '1 
+is_sqli: F string: Description 5 
+is_sqli: T string: Title ' or username is not NULL or username = ' 
+is_sqli: F string: Description 6 
+is_sqli: F string: Title 1 and ascii(lower(substring((select top 1 name from sysobjects where xtype='u'), 1, 1))) > 116 
+is_sqli: F string: Description 7 
+is_sqli: F string: Title 1 union all select 1,2,3,4,5,6,name from sysobjects where xtype = 'u' -- 
+is_sqli: F string: Description 8 
+is_sqli: F string: Title 1 uni/**/on select all from where 
+is_sqli: F string: Description 9 

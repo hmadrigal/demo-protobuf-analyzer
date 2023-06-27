@@ -1,0 +1,18 @@
+is_sqli: F string: Title 1'1 
+is_sqli: F string: Description 1 
+is_sqli: F string: Title 1 exec sp_ (or exec xp_) 
+is_sqli: F string: Description 2 
+is_sqli: F string: Title 1 and 1=1 
+is_sqli: F string: Description 3 
+is_sqli: T string: Title 1' and 1=(select count(*) from tablenames); -- 
+is_sqli: F string: Description 4 
+is_sqli: F string: Title 1 or 1=1 
+is_sqli: F string: Description 5 
+is_sqli: T string: Title 1' or '1'='1 
+is_sqli: F string: Description 6 
+is_sqli: F string: Title 1or1=1 
+is_sqli: F string: Description 7 
+is_sqli: T string: Title 1'or'1'='1 
+is_sqli: F string: Description 8 
+is_sqli: T string: Title fake@ema'or'il.nl'='il.nl 
+is_sqli: F string: Description 9 

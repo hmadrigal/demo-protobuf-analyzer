@@ -1,0 +1,80 @@
+is_sqli: F string: Title /index.asp?db=a9h&jid=JHE&scope=site 
+is_sqli: F string: Description 1 
+is_sqli: F string: Title /blah/?q=?q=archive+title=Read the older content in our archive 
+is_sqli: F string: Description 2 
+is_sqli: F string: Title /blah/?q=?q= title=Return to the main page 
+is_sqli: F string: Description 3 
+is_sqli: F string: Title /index.pl?http://search.ebscohost.com.proxy.lib.ohio-state.edu/direct.asp?db=s3h&jid=22EG&scope=site 
+is_sqli: F string: Description 4 
+is_sqli: F string: Title /search?q=eugene svirsky&spell=1&access=p&output=xml_no_dtd&ie=UTF-8&client=default_frontend&site=default_collection&proxystylesheet=default_frontend 
+is_sqli: F string: Description 5 
+is_sqli: F string: Title /index.htm?List=<ows:ListProperty Select='Name' 
+is_sqli: F string: Description 6 
+is_sqli: F string: Title /index.aspx?TreeviewPk=67&startat=f&filter=tree_pk='f502530'&stopat=b 
+is_sqli: F string: Description 7 
+is_sqli: F string: Title /index.asp?A0=23&A1=||17||=0&A2=||7|| desc&A3=||6||=62512 AND ||_System_||=0&A4=1,7,16,5,9&A5=2&A6=1&A7=0&A8=0&A9=0&A10= 
+is_sqli: F string: Description 8 
+is_sqli: F string: Title /?q=?q= title=Return to the main page 
+is_sqli: F string: Description 9 
+is_sqli: T string: Title /index.swf?MMredirectURL='+MMredirectURL+'&MMplayerType=PlugIn 
+is_sqli: F string: Description 10 
+is_sqli: F string: Title /search?q=Drop-a-GEC Course&btnG=Search Ohio State&entqr=0&output=xml_no_dtd&sort=date:D:L:d1&ie=UTF-8&client=default_frontend&ud=1&y=15&oe=UTF-8&proxystylesheet=default_frontend&x=77&site=default_collection 
+is_sqli: F string: Description 11 
+is_sqli: F string: Title /index?config=joe&restrict=&exclude=&matchesperpage=8&method=and&format=long&sort=score&words=organizational change policy 
+is_sqli: F string: Description 12 
+is_sqli: F string: Title /index.swf?clickTag=http://xads.zedo.com//ads2/c?a=309530;x=3613;g=0,0;c=162000122,162000122;i=0;n=162;s=94;;i=0;u=FFFFFFFFFFFFFFFFF;e=i;s=94;g=172;w=38;m=69;p=6;f=351860;h=265048;k=http://ad.doubleclick.net/jump/N1057.Und/B2331434.43;sz=1x1;ord=0.8798379284729? 
+is_sqli: F string: Description 13 
+is_sqli: F string: Title /blah/?q=?q=" title="Return to the main page. 
+is_sqli: F string: Description 14 
+is_sqli: F string: Title /blah?pg=thread;sz=160x600;tile=2;pos=1;bl=n;comp=;is_guest=1;ord=38872342341? 
+is_sqli: F string: Description 15 
+is_sqli: F string: Title /index/a.b.com/ros;sect=ros;sz=728x90,468x60;click=http://a.b.com/servlet/click/media?zid=0&cid=0&mid=1104&pid=0&default=false&random=449290001&timestamp=20110426084929&test=false&referrer=http://b.com/darryl+worley-lyrics-964.html&redirect=;tile=1;ord=1309979795.5? 
+is_sqli: F string: Description 16 
+is_sqli: T string: Title /index/?keywordCharEnc=latin1&cb=' + dartDate + ' 
+is_sqli: F string: Description 17 
+is_sqli: F string: Title /search/searchresult.jsp?op2=and&query3=&scope3=metadata&queryText=(+((yu)<in>metadata+)+<and>+((munson)<in>metadata+)+) 
+is_sqli: F string: Description 18 
+is_sqli: F string: Title /index?Z=300x250&s=299359&_salt=523454521`54&B=10&u=http://ad.doubleclick.net/adi/answ.science/;dcopt=ist;kw=biased+sample;tid=2735125;scat=health;scat=business;pcat=science;pos=1;tile=1;sz=300x250;csrc=2451;csrc=2191;csrc=2665;csrc=2750;or&r=0 
+is_sqli: F string: Description 19 
+is_sqli: F string: Title /index.php?sid=FirstSearch:AveryIndex&genre=article&issn=1590-1394&isbn=&atitle=Paesaggio+artificiale:+una+cava+diventa+parco+urbano+=++Artificial+landscape:+a+quarry+becomes+an+urban+park&title=Metamorfosi&issue=66&spage=58&epage=60&date=2007-05&sici=1590-1394(200705/06)66<58:PAUCDP>2.0.TX;2-C&id=doi:&pid=<accession+number>858994226+858994226</accession+number><fssessid>fsapp13-52547-fhscgzal-jqsb44</fssessid>&url_ver=Z39.88-2004&rfr_id=info:sid/firstsearch.oclc.org:AveryIndex&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&req_dat=<sessionid>fsapp13-52547-fhscgzal-jqsb44</sessionid>&rfe_dat=<accessionnumber>858994226+858994226</accessionnumber>&rft_id=urn:ISSN:1590-1394&rft.atitle=Paesaggio+artificiale:+una+cava+diventa+parco+urbano+=++Artificial+landscape:+a+quarry+becomes+an+urban+park&rft.jtitle=Metamorfosi&rft.date=2007-05&rft.issue=66&rft.spage=58&rft.epage=60&rft.issn=1590-1394&rft.genre=article&rft.sici=1590-1394(200705/06)66<58:PAUCDP>2.0.TX;2-C 
+is_sqli: F string: Description 20 
+is_sqli: F string: Title /index?body=linker&reqidx=00012345(2005)L.349 
+is_sqli: F string: Description 21 
+is_sqli: F string: Title /index.jsp?SortField=Score&SortOrder=desc&ResultCount=25&maxdoc=100&coll1=&coll2=ieeecnfs&coll3=ieecnfs&coll4=&coll5=&coll6=&coll7=&coll8=&srchres=0&history=yes&queryText=((curran)<IN>metadata)&oldqrytext=(~~simon+curran~~+<in>+metadata)+<and>+(4389466+<in>+punumber)&radiobutton=cit 
+is_sqli: F string: Description 22 
+is_sqli: F string: Title /index.php?action=uid=32651(makessc) gid=32652(makessc) groups=32652(makessc) 
+is_sqli: F string: Description 23 
+is_sqli: F string: Title /index.cgi?t=event&id=3947&year=2007&week=13&wday=3&rt=n&hour=13&min=30&lengthmin=90&title=771 (4) Biomedical Instrumentation - J. Liu&data=&startyear=2007&startweek=13&startwday=3&duration=1&alval=&altype=&alchk=&strike=0&todo=0&mail=0&lock=0&priv=0 
+is_sqli: F string: Description 24 
+is_sqli: F string: Title /index.php?site=EagleTribunePublishingCompany&adSpace=ROS&size=468x60&type=horiz&requestID='+((new Date()).getTime()  2147483648) + Math.random()+' 
+is_sqli: F string: Description 25 
+is_sqli: F string: Title /blah?callback=google.language.callbacks.id100&context=22&q=) or articles from the online magazine archive will need to log in, in order to access the content they have purchased.&langpair=|en&key=notsupplied&v=1.0 
+is_sqli: F string: Description 26 
+is_sqli: F string: Title /blah?hl=en&rlz=1T4DDWQ_enUS432US432&q="andrew+foobar" 
+is_sqli: F string: Description 27 
+is_sqli: F string: Title /index.cfm?filename=32423411.GP4&ip=1.2.3.4&id_num=0063&proj_num=2906&sheet_name=2 AND 3 FLR&sheet_num=2E&path=L:\ARF\DATA\13000\95013889.GP4 
+is_sqli: F string: Description 28 
+is_sqli: T string: Title /index.pl\?supersite=stations&station=ABCD&path='+location.pathname+'&'+location.search.substring(1)+'\"\ 
+is_sqli: F string: Description 29 
+is_sqli: F string: Title /ntpagetag.gif?js=1&ts=123412341234.568&lc=http://a.b.org/default.aspx?mode=js#&rs=1440x900&cd=32&ln=en&tz=GMT -04:00&jv=1&ets=123412341234.623&select_challenge_from_gallery=1&ci=RCC00000000 
+is_sqli: F string: Description 30 
+is_sqli: F string: Title my.server.com/api/find?tag=hello&SELECT0=true 
+is_sqli: F string: Description 31 
+is_sqli: F string: Title /api/datasources/proxy/1/query?db=telegraf&q=SELECT sum("gauge") FROM "boomd_indexer_memory_index_bytes_total" WHERE ("space" =~ /^(corelight|wrccdc)$/) AND time >= 1561410802000ms and time <= 1561416568000ms GROUP BY time(1s)&epoch=ms 
+is_sqli: F string: Description 32 
+is_sqli: F string: Title /api/datasources/proxy/1/query?db=telegraf&q=SELECT derivative(sum("counter"), 1s) FROM "boomd_indexer_slabs_processed_total" WHERE ("space" =~ /^(corelight|wrccdc)$/) AND time >= 1561410802000ms and time <= 1561416568000ms GROUP BY time(1s)&epoch=ms 
+is_sqli: F string: Description 33 
+is_sqli: F string: Title /A-B-C-D/inc/foobar.php?img=1179681280a b c d arf union.jpg 
+is_sqli: F string: Description 34 
+is_sqli: F string: Title /api/datasources/proxy/1/query?db=telegraf&q=SELECT mean("0.5") AS "0.5", mean("0.9") AS "0.9", mean("0.99") AS "0.99" FROM "boomd_indexer_write_size_bytes" WHERE ("type" = 'key' AND "space" =~ /^(corelight|wrccdc)$/) AND time >= 1561410802000ms and time <= 1561416568000ms GROUP BY time(1s);SELECT derivative(sum("sum"), 1s) FROM "boomd_indexer_write_size_bytes" WHERE ("type" = 'key' AND "space" =~ /^(corelight|wrccdc)$/) AND time >= 1561410802000ms and time <= 1561416568000ms GROUP BY time(1s)&epoch=ms 
+is_sqli: F string: Description 35 
+is_sqli: F string: Title /test,+soviet+union&searchscope=7&SORT=DZ/test,+soviet+union&foobar=7 
+is_sqli: F string: Description 36 
+is_sqli: F string: Title /search?hl=en&q=fee union western 
+is_sqli: F string: Description 37 
+is_sqli: F string: Title /search?hl=en&q=ceiling drop tile 
+is_sqli: F string: Description 38 
+is_sqli: F string: Title /index/hmm.gif?utmdt=Record > Create a Graph 
+is_sqli: F string: Description 39 
+is_sqli: F string: Title /index.php?test='||\x0aTO_CHAR(foo_bar.Foo_Bar_ID)|| 
+is_sqli: F string: Description 40 

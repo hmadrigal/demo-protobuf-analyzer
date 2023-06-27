@@ -1,0 +1,9 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	sqli_grpc
+#fields	method	authority	host	original_URI	text
+#types	string	string	string	string	string
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title 1' and non_existant_table = '1 
+POST	172.16.210.133	172.16.210.133	/todo.TodoService/CreateTodoItem	Title ' or username is not NULL or username = ' 

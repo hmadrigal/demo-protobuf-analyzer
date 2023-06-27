@@ -1,0 +1,108 @@
+is_sqli: F string: Title \xe2\x80\x99 or \xe2\x80\x981\xe2\x80\x99=\xe2\x80\x991 
+is_sqli: F string: Description 1 
+is_sqli: T string: Title ' or '1'='1 
+is_sqli: F string: Description 2 
+is_sqli: T string: Title '||utl_http.request('httP://192.168.1.1/')||' 
+is_sqli: F string: Description 3 
+is_sqli: F string: Title ' || myappadmin.adduser('admin', 'newpass') || ' 
+is_sqli: F string: Description 4 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT banner FROM v$version WHERE ROWNUM=1)) AND 'i'='i 
+is_sqli: F string: Description 5 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT SYS.LOGIN_USER FROM DUAL)) AND 'i'='i 
+is_sqli: F string: Description 6 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT SYS.DATABASE_NAME FROM DUAL)) AND 'i'='i 
+is_sqli: F string: Description 7 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT host_name FROM v$instance)) AND 'i'='i 
+is_sqli: F string: Description 8 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT global_name FROM global_name)) AND 'i'='i 
+is_sqli: F string: Description 9 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT COUNT(DISTINCT(USERNAME)) FROM SYS.ALL_USERS)) AND 'i'='i 
+is_sqli: F string: Description 10 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT COUNT(DISTINCT(PASSWORD)) FROM SYS.USER$)) AND 'i'='i 
+is_sqli: F string: Description 11 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT COUNT(DISTINCT(table_name)) FROM sys.all_tables)) AND 'i'='i 
+is_sqli: F string: Description 12 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT COUNT(DISTINCT(column_name)) FROM sys.all_tab_columns)) AND 'i'='i 
+is_sqli: F string: Description 13 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT COUNT(DISTINCT(GRANTED_ROLE)) FROM DBA_ROLE_PRIVS WHERE GRANTEE=SYS.LOGIN_USER)) AND 'i'='i 
+is_sqli: F string: Description 14 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(USERNAME) FROM (SELECT DISTINCT(USERNAME), ROWNUM AS LIMIT FROM SYS.ALL_USERS) WHERE LIMIT=1)) AND 'i'='i 
+is_sqli: F string: Description 15 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(PASSWORD) FROM (SELECT DISTINCT(PASSWORD), ROWNUM AS LIMIT FROM SYS.USER$) WHERE LIMIT=1)) AND 'i'='i 
+is_sqli: F string: Description 16 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(table_name) FROM (SELECT DISTINCT(table_name), ROWNUM AS LIMIT FROM sys.all_tables) WHERE LIMIT=1)) AND 'i'='i 
+is_sqli: F string: Description 17 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(column_name) FROM (SELECT DISTINCT(column_name), ROWNUM AS LIMIT FROM all_tab_columns) WHERE LIMIT=1)) AND 'i'='i 
+is_sqli: F string: Description 18 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(granted_role) FROM (SELECT DISTINCT(granted_role), ROWNUM AS LIMIT FROM dba_role_privs WHERE GRANTEE=SYS.LOGINUSER) WHERE LIMIT=1)) AND 'i'='i 
+is_sqli: F string: Description 19 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(USERNAME) FROM (SELECT DISTINCT(USERNAME), ROWNUM AS LIMIT FROM SYS.ALL_USERS) WHERE LIMIT=2)) AND 'i'='i 
+is_sqli: F string: Description 20 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(PASSWORD) FROM (SELECT DISTINCT(PASSWORD), ROWNUM AS LIMIT FROM SYS.USER$) WHERE LIMIT=2)) AND 'i'='i 
+is_sqli: F string: Description 21 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(table_name) FROM (SELECT DISTINCT(table_name), ROWNUM AS LIMIT FROM sys.all_tables) WHERE LIMIT=2)) AND 'i'='i 
+is_sqli: F string: Description 22 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(column_name) FROM (SELECT DISTINCT(column_name), ROWNUM AS LIMIT FROM all_tab_columns) WHERE LIMIT=2)) AND 'i'='i 
+is_sqli: F string: Description 23 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(granted_role) FROM (SELECT DISTINCT(granted_role), ROWNUM AS LIMIT FROM dba_role_privs WHERE GRANTEE=SYS.LOGINUSER) WHERE LIMIT=2)) AND 'i'='i 
+is_sqli: F string: Description 24 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(USERNAME) FROM (SELECT DISTINCT(USERNAME), ROWNUM AS LIMIT FROM SYS.ALL_USERS) WHERE LIMIT=3)) AND 'i'='i 
+is_sqli: F string: Description 25 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(PASSWORD) FROM (SELECT DISTINCT(PASSWORD), ROWNUM AS LIMIT FROM SYS.USER$) WHERE LIMIT=3)) AND 'i'='i 
+is_sqli: F string: Description 26 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(table_name) FROM (SELECT DISTINCT(table_name), ROWNUM AS LIMIT FROM sys.all_tables) WHERE LIMIT=3)) AND 'i'='i 
+is_sqli: F string: Description 27 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(column_name) FROM (SELECT DISTINCT(column_name), ROWNUM AS LIMIT FROM all_tab_columns) WHERE LIMIT=3)) AND 'i'='i 
+is_sqli: F string: Description 28 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(granted_role) FROM (SELECT DISTINCT(granted_role), ROWNUM AS LIMIT FROM dba_role_privs WHERE GRANTEE=SYS.LOGINUSER) WHERE LIMIT=3)) AND 'i'='i 
+is_sqli: F string: Description 29 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(USERNAME) FROM (SELECT DISTINCT(USERNAME), ROWNUM AS LIMIT FROM SYS.ALL_USERS) WHERE LIMIT=4)) AND 'i'='i 
+is_sqli: F string: Description 30 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(PASSWORD) FROM (SELECT DISTINCT(PASSWORD), ROWNUM AS LIMIT FROM SYS.USER$) WHERE LIMIT=4)) AND 'i'='i 
+is_sqli: F string: Description 31 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(table_name) FROM (SELECT DISTINCT(table_name), ROWNUM AS LIMIT FROM sys.all_tables) WHERE LIMIT=4)) AND 'i'='i 
+is_sqli: F string: Description 32 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(column_name) FROM (SELECT DISTINCT(column_name), ROWNUM AS LIMIT FROM all_tab_columns) WHERE LIMIT=4)) AND 'i'='i 
+is_sqli: F string: Description 33 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(granted_role) FROM (SELECT DISTINCT(granted_role), ROWNUM AS LIMIT FROM dba_role_privs WHERE GRANTEE=SYS.LOGINUSER) WHERE LIMIT=4)) AND 'i'='i 
+is_sqli: F string: Description 34 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(USERNAME) FROM (SELECT DISTINCT(USERNAME), ROWNUM AS LIMIT FROM SYS.ALL_USERS) WHERE LIMIT=5)) AND 'i'='i 
+is_sqli: F string: Description 35 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(PASSWORD) FROM (SELECT DISTINCT(PASSWORD), ROWNUM AS LIMIT FROM SYS.USER$) WHERE LIMIT=5)) AND 'i'='i 
+is_sqli: F string: Description 36 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(table_name) FROM (SELECT DISTINCT(table_name), ROWNUM AS LIMIT FROM sys.all_tables) WHERE LIMIT=5)) AND 'i'='i 
+is_sqli: F string: Description 37 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(column_name) FROM (SELECT DISTINCT(column_name), ROWNUM AS LIMIT FROM all_tab_columns) WHERE LIMIT=5)) AND 'i'='i 
+is_sqli: F string: Description 38 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(granted_role) FROM (SELECT DISTINCT(granted_role), ROWNUM AS LIMIT FROM dba_role_privs WHERE GRANTEE=SYS.LOGINUSER) WHERE LIMIT=5)) AND 'i'='i 
+is_sqli: F string: Description 39 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(USERNAME) FROM (SELECT DISTINCT(USERNAME), ROWNUM AS LIMIT FROM SYS.ALL_USERS) WHERE LIMIT=6)) AND 'i'='i 
+is_sqli: F string: Description 40 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(PASSWORD) FROM (SELECT DISTINCT(PASSWORD), ROWNUM AS LIMIT FROM SYS.USER$) WHERE LIMIT=6)) AND 'i'='i 
+is_sqli: F string: Description 41 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(table_name) FROM (SELECT DISTINCT(table_name), ROWNUM AS LIMIT FROM sys.all_tables) WHERE LIMIT=6)) AND 'i'='i 
+is_sqli: F string: Description 42 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(column_name) FROM (SELECT DISTINCT(column_name), ROWNUM AS LIMIT FROM all_tab_columns) WHERE LIMIT=6)) AND 'i'='i 
+is_sqli: F string: Description 43 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(granted_role) FROM (SELECT DISTINCT(granted_role), ROWNUM AS LIMIT FROM dba_role_privs WHERE GRANTEE=SYS.LOGINUSER) WHERE LIMIT=6)) AND 'i'='i 
+is_sqli: F string: Description 44 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(USERNAME) FROM (SELECT DISTINCT(USERNAME), ROWNUM AS LIMIT FROM SYS.ALL_USERS) WHERE LIMIT=7)) AND 'i'='i 
+is_sqli: F string: Description 45 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(PASSWORD) FROM (SELECT DISTINCT(PASSWORD), ROWNUM AS LIMIT FROM SYS.USER$) WHERE LIMIT=7)) AND 'i'='i 
+is_sqli: F string: Description 46 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(table_name) FROM (SELECT DISTINCT(table_name), ROWNUM AS LIMIT FROM sys.all_tables) WHERE LIMIT=7)) AND 'i'='i 
+is_sqli: F string: Description 47 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(column_name) FROM (SELECT DISTINCT(column_name), ROWNUM AS LIMIT FROM all_tab_columns) WHERE LIMIT=7)) AND 'i'='i 
+is_sqli: F string: Description 48 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(granted_role) FROM (SELECT DISTINCT(granted_role), ROWNUM AS LIMIT FROM dba_role_privs WHERE GRANTEE=SYS.LOGINUSER) WHERE LIMIT=7)) AND 'i'='i 
+is_sqli: F string: Description 49 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(USERNAME) FROM (SELECT DISTINCT(USERNAME), ROWNUM AS LIMIT FROM SYS.ALL_USERS) WHERE LIMIT=8)) AND 'i'='i 
+is_sqli: F string: Description 50 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(PASSWORD) FROM (SELECT DISTINCT(PASSWORD), ROWNUM AS LIMIT FROM SYS.USER$) WHERE LIMIT=8)) AND 'i'='i 
+is_sqli: F string: Description 51 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(table_name) FROM (SELECT DISTINCT(table_name), ROWNUM AS LIMIT FROM sys.all_tables) WHERE LIMIT=8)) AND 'i'='i 
+is_sqli: F string: Description 52 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(column_name) FROM (SELECT DISTINCT(column_name), ROWNUM AS LIMIT FROM all_tab_columns) WHERE LIMIT=8)) AND 'i'='i 
+is_sqli: F string: Description 53 
+is_sqli: T string: Title ' AND 1=utl_inaddr.get_host_address((SELECT DISTINCT(granted_role) FROM (SELECT DISTINCT(granted_role), ROWNUM AS LIMIT FROM dba_role_privs WHERE GRANTEE=SYS.LOGINUSER) WHERE LIMIT=8)) AND 'i'='i 
+is_sqli: F string: Description 54 
