@@ -22,14 +22,25 @@
 namespace zeek::plugin {
 namespace Demo_ProtobufAnalyzer {
 
+/// <summary>
+/// A class that represents a protobuf analyzer.
+/// </summary>
 class ProtobufAnalyzer : public zeek::file_analysis::Analyzer
 	{
 public:
+	/// <summary>
+	/// Instantiates a new ProtobufAnalyzer.
+	/// </summary>
 	static zeek::file_analysis::Analyzer* Instantiate(zeek::RecordValPtr args,
 	                                                  zeek::file_analysis::File* file);
 
+	/// <summary>
+	/// Overrides the DeliverStream method of the Analyzer class.
+	/// </summary>
 	bool DeliverStream(const u_char* data, uint64_t len) override;
 
+	/// <summary>
+	/// Overrides the EndOfFile method of the Analyzer class.
 	bool EndOfFile() override;
 
 protected:

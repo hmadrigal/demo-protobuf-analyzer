@@ -23,6 +23,9 @@
 namespace zeek::plugin {
 namespace Demo_ProtobufAnalyzer {
 
+/// <summary>
+/// A struct that represents a part of a protobuf message.
+/// </summary>
 typedef struct
 	{
 	uint64_t byteRangeStart;
@@ -33,6 +36,9 @@ typedef struct
 
 	} ProtobufPart;
 
+/// <summary>
+/// A enum that represents the different types of a protobuf message.
+/// </summary>
 enum TYPES
 	{
 	VARINT = 0,
@@ -41,17 +47,33 @@ enum TYPES
 	FIXED32 = 5
 	};
 
+/// <summary>
+/// A class that decodes a protobuf message.
+/// </summary>
 class ProtobufDecoder
 	{
 
 public:
 
+	/// <summary>
+	/// Constructor.
+	/// </summary>
 	ProtobufDecoder(zeek::file_analysis::File* file);
 
+	/// <summary>
+	/// Decodes a buffer that contains a protobuf message.
+	/// </summary>
 	std::tuple<std::vector<ProtobufPart>, std::vector<u_char>>
 	DecodeProto(std::vector<u_char> data);
+
+	/// <summary>
+	/// Decodes a part of a protobuf message.
+	/// </summary>
 	void DecodeProtobufPart(ProtobufPart part);
 
+	/// <summary>
+	/// Decodes several parts of a protobuf message.
+	/// </summary>
 	bool DecodeProto(std::vector<ProtobufPart> parts);
 
 private:

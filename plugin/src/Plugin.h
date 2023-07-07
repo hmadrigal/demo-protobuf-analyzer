@@ -9,10 +9,15 @@
 namespace zeek::plugin {
 namespace Demo_ProtobufAnalyzer {
 
+		/// <summary>
+		/// A class that represents the plugin.
+		/// </summary>
 		class Plugin : public zeek::plugin::Plugin
 		{
 		protected:
-			// Overridden from zeek::plugin::Plugin.
+			/// <summary>
+			/// Instantiates a new ProtobufAnalyzer.
+			/// </summary>
 			zeek::plugin::Configuration Configure() override;
 		};
 

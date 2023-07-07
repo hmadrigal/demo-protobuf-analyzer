@@ -3,33 +3,38 @@
 namespace zeek::plugin {
 namespace Demo_ProtobufAnalyzer {
 
+		/// <summary>
+		/// Receives a buffer as paramters, and provides methods to read data from it.
+		/// </summary>
 		BufferReader::BufferReader(std::vector<u_char> data)
 		{
 			buffer = data;
 			offset = 0;
-
-			// for (uint64_t i = 0; i < buffer.size(); i++)
-			// {
-			// 	std::cout << std::hex << std::setw(2) << std::setfill('0') << (int)buffer[i] << " ";
-			// }
 		}
 
+		/// <summary>
+		/// Get the current offset of the reader.
+		/// </summary>
 		uint64_t BufferReader::GetOffset()
 		{
 			return offset;
 		}
 
+		/// <summary>
+		/// Reads a varint-encoded integer from the buffer.
+		/// </summary>
 		std::tuple<uint64_t, std::vector<u_char>> BufferReader::ReadVarint()
 		{
 			const auto [value, length] = DecodeVarint(buffer, offset);
 			std::vector<u_char> data(buffer.begin() + offset, buffer.begin() + offset + length + 1);
 			offset += length;
 
-			// std::cout << "[VAR] value: " << value << " length: " << length << std::endl;
-
 			return std::make_tuple(value, data);
 		}
 
+		/// <summary>
+		/// Reads a byte from the buffer.
+		/// </summary>
 		std::vector<u_char> BufferReader::ReadBuffer(uint64_t length)
 		{
 			std::vector<u_char> res;
@@ -40,21 +45,33 @@ namespace Demo_ProtobufAnalyzer {
 			return res;
 		}
 
+		/// <summary>
+		/// Reads the remaining bytes from the buffer.
+		/// </summary>
 		uint64_t BufferReader::LeftBytes()
 		{
 			return buffer.size() - offset;
 		}
 
+		/// <summary>
+		/// Sets a checkpoint to the current offset.
+		/// </summary>
 		void BufferReader::Checkpoint(void)
 		{
 			savedOffset = offset;
 		}
 
+		/// <summary>
+		/// Resets the offset to the last checkpoint.
+		/// </summary>
 		void BufferReader::ResetToCheckpoint(void)
 		{
 			offset = savedOffset;
 		}
 
+		/// <summary>
+		/// Tries to skip the gRPC header. Some gRPC messages have a header that we need to skip.
+		/// </summary>
 		void BufferReader::TrySkipGrpcHeader()
 		{
 			uint64_t backupOffset = offset;
@@ -63,17 +80,18 @@ namespace Demo_ProtobufAnalyzer {
 			{
 				offset++;
 				uint64_t length = ReadInt32BE(buffer, offset);
-				// std::cout << "Grpc header length: " << length << std::endl;
 				offset += 4;
 
 				if (length > LeftBytes())
 				{
-					// Something is wrong, revert
 					offset = backupOffset;
 				}
 			}
 		}
 
+		/// <summary>
+		/// Decodes a Int32 from a buffer.
+		/// </summary>
 		int32_t BufferReader::ReadInt32BE(std::vector<u_char> data, uint64_t offset)
 		{
 			return (data[offset] << 24) | (data[offset + 1] << 16) | (data[offset + 2] << 8) | data[offset + 3];

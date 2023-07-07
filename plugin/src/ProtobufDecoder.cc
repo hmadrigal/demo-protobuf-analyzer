@@ -4,11 +4,17 @@ namespace zeek::plugin {
 namespace Demo_ProtobufAnalyzer {
 
 
+		/// <summary>
+		/// Constructor.
+		/// </summary>
 		ProtobufDecoder::ProtobufDecoder(zeek::file_analysis::File* file)
 			: file(file){
-				
+
 		}
-		
+
+		/// <summary>
+		/// Decodes a buffer that contains a protobuf message.
+		/// </summary>
 		std::tuple<std::vector<ProtobufPart>, std::vector<u_char>>
 		ProtobufDecoder::DecodeProto(std::vector<u_char> data)
 		{
@@ -32,7 +38,6 @@ namespace Demo_ProtobufAnalyzer {
 					uint64_t index = indexType >> 3;
 					std::vector<u_char> value;
 
-					// std::cout << "index: " << index << " type: " << type << std::endl;
 
 					if (type == TYPES::VARINT)
 					{
@@ -42,12 +47,7 @@ namespace Demo_ProtobufAnalyzer {
 					else if (type == TYPES::LENDELIM)
 					{
 						const auto [length, _] = reader.ReadVarint();
-						// std::cout << "[LEN] TYPES::LENDELIM length: " << length << std::endl;
 						value = reader.ReadBuffer(length);
-						// for (auto v : value)
-						// {
-						// 	std::cout << (int)v << " ";
-						// }
 					}
 					else if (type == TYPES::FIXED32)
 					{
@@ -64,10 +64,6 @@ namespace Demo_ProtobufAnalyzer {
 
 					byteRangeEnd = reader.GetOffset();
 
-					// std::cout << "byteRangeStart: " << byteRangeStart << " byteRangeEnd: " << byteRangeEnd << std::endl;
-					// std::cout << "index: " << index << " type: " << type << std::endl;
-					// std::cout << "value: ";
-
 					ProtobufPart part = {byteRangeStart, byteRangeEnd, index, type, value};
 					parts.push_back(part);
 
@@ -82,6 +78,9 @@ namespace Demo_ProtobufAnalyzer {
 			return std::make_tuple(parts, leftOver);
 		}
 
+		/// <summary>
+		/// Decodes a part of a protobuf message.
+		/// </summary>
 		void ProtobufDecoder::DecodeProtobufPart(ProtobufPart part)
 		{
 			switch (part.type)
@@ -101,7 +100,6 @@ namespace Demo_ProtobufAnalyzer {
 					// part.value is likely to be a string or bytes
 					// trigger event using value
 					const u_char *data = part.value.data();
-					//GetFile()->ToVal()
 					zeek::event_mgr.Enqueue(protobuf_string, file->ToVal(),
 											zeek::make_intrusive<zeek::StringVal>(
 												new zeek::String(data, part.value.size(), false)));
@@ -119,6 +117,9 @@ namespace Demo_ProtobufAnalyzer {
 			}
 		}
 
+		/// <summary>
+		/// Decodes several parts of a protobuf message.
+		/// </summary>
 		bool ProtobufDecoder::DecodeProto(std::vector<ProtobufPart> parts)
 		{
 			for (ProtobufPart part : parts)
@@ -127,8 +128,6 @@ namespace Demo_ProtobufAnalyzer {
 			}
 			return true;
 		}
-
-
 
 	}
 }
