@@ -71,6 +71,8 @@ namespace Demo_ProtobufAnalyzer {
 			}
 			catch (const std::exception &e)
 			{
+				// print error to stdout
+				// std::cout << e.what() << std::endl;
 				reader.ResetToCheckpoint();
 			}
 
@@ -89,8 +91,10 @@ namespace Demo_ProtobufAnalyzer {
 				break;
 			case TYPES::LENDELIM:
 			{
+				long part_value_size = part.value.size();
 				const auto [parts, leftOver] = DecodeProto(part.value);
-				if (part.value.size() > 0 && leftOver.size() == 0)
+
+				if (part_value_size > 0 && leftOver.size() == 0)
 				{
 					// part.value is likely to be a sub message
 					DecodeProto(parts);

@@ -55,7 +55,13 @@ namespace Demo_ProtobufAnalyzer {
 
 			/// <summary>
 			/// Reads a Varint from the buffer.
+			/// </summary>
 			std::tuple<uint64_t, std::vector<u_char>> ReadVarint();
+
+			/// <summary>
+			/// Checks if there are enough bytes left in the buffer.
+			/// </summary>
+			void CheckBytesLeft(uint64_t length);
 
 			/// <summary>
 			/// Reads a byte from the buffer.

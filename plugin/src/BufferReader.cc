@@ -32,11 +32,24 @@ namespace Demo_ProtobufAnalyzer {
 			return std::make_tuple(value, data);
 		}
 
+
+		/// <summary>
+		/// Checks if there are enough bytes left in the buffer.
+		/// </summary>
+		void BufferReader::CheckBytesLeft(uint64_t length)
+		{
+			if (length > LeftBytes())
+			{
+				throw std::runtime_error("Not enough bytes left in the buffer");
+			}
+		}
+
 		/// <summary>
 		/// Reads a byte from the buffer.
 		/// </summary>
 		std::vector<u_char> BufferReader::ReadBuffer(uint64_t length)
 		{
+			CheckBytesLeft(length);
 			std::vector<u_char> res;
 			for (uint64_t i = 0; i < length; i++)
 			{
