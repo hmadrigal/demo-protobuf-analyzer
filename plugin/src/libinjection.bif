@@ -19,7 +19,7 @@ module Demo::ProtobufAnalyzer;
 
 # Built-in function implementations follow here. For help on these, see
 
-function is_sql_injection%(s: string, len: int%) : bool
+function is_sqli_by_libinjection%(s: string, len: int%) : bool
     %{
 
         struct libinjection_sqli_state state;

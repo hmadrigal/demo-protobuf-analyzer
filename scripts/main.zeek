@@ -235,10 +235,10 @@ event protobuf_string(f: fa_file, text: string)
 @endif
 
 
-    local is_sqli = is_sql_injection(text, |text|) || ( match_sql_injection_uri in text );
+    local is_sqli = is_sqli_by_libinjection(text, |text|) || ( match_sql_injection_uri in text );
 
 @if ( ProtobufAnalyzerDebug )
-    print "    is_sql_injection", is_sqli;
+    print "    is_sqli_by_libinjection", is_sqli;
 @endif
 
     if ( is_sqli )
