@@ -24,7 +24,7 @@ else
     fi
 
     if [ "$1" = "zeekpath" ]; then
-        zeek-config --zeekpath
+        echo "$(cd ${base}/../../scripts && pwd):$(zeek-config --zeekpath)"
     elif [ "$1" = "zeek_plugin_path" ]; then
         # Combine the local tree and the system-wide path. This allows
         # us to test on a local build or an installation made via zkg,

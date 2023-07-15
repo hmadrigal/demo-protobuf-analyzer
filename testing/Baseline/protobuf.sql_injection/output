@@ -1,0 +1,4 @@
+is_sqli: F string: A normal day
+is_sqli: F string: A simple message today
+is_sqli: T string: -1' and 1=1 union/* foo */select load_file('/etc/passwd')--
+is_sqli: F string: A simple message today

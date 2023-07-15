@@ -1,0 +1,5 @@
+Pipoca::ProtobufAnalyzer - Prototype for a ProtocolBuf decoder. (dynamic, version)
+    [File Analyzer] PROTOBUF (ANALYZER_PROTOBUF, enabled)
+    [Event] protobuf_string
+    [Function] Pipoca::ProtobufAnalyzer::is_sqli_by_libinjection
+
