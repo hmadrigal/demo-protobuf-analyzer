@@ -1,4 +1,62 @@
-ProtobufAnalyzer
-=================================
+Protobuf Analyzer
+=================
 
-Analyzes protocol buffer files and generates Zeek events.
+Description
+=================
+A Zeek plug in which decodes Protocol Buffer (protobuf), also the plug in has an option to check SQL injection (SQLi).
+
+Credits / References
+=================
+This plug in uses depends on:
+
+* libinjection by Client9 library for SQL injection detection.
+* bro-http2 by MITRE Zeek Plugin for analyzing HTTP/2.
+
+Additionally for testing SQL injection the, the library sql-injection-payload-list by payloadbox has been a great resource for testing the SQL injection detection.
+
+The repository zeek-plugin-protobuf-sqli-test-apps contains apps to generate gRPC (protobuf + HTTP/2) content and capture it in order to perform tests of the plug in.
+
+Development
+=================
+This plug in has been developed on:
+
+* OS: Ubuntu 22.10 (Kinetic Kudu) Kernel: Linux osboxes 5.19.0-46-generic #47-Ubuntu SMP PREEMPT_DYNAMIC Fri Jun 16 13:30:11 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+* Zeek zeek version 5.0.8
+The development environment requires to be able to compile C++
+
+Use
+=================
+
+Remarks
+=================
+
+* Tested against zeek version 5.0.8
+
+Install
+=================
+
+zkg install https://github.com/hmadrigal/zeek-plugin-protobuf-sqli.git
+
+Samples
+=================
+
+Enable protobuf (gRPC) file analyzer
+=================
+
+# Loads Plugin to analyze protobuf files
+@load protobuf
+
+# Handle event, when a text has been detected
+event protobuf_string(f: fa_file, text: string)
+{
+    print fmt("string: %s", text);
+}
+
+Enable SQL injection detection module
+=================
+
+# The SQL injection modules produces a file sqli_grpc.log with the findings.
+# Load protobuf file analyzer
+@load protobuf
+# Load SQL injection module
+@load protobuf/sqli-detect

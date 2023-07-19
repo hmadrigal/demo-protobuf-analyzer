@@ -2,8 +2,8 @@
 script_dir = scripts
 build_command = ./configure && cd build && make
 test_command = cd testing && btest -c btest.cfg
-summary = Protocol Buffer File Analyzer
-description = Analyzes protocol buffer files and generates Zeek events.
+summary = File analyzer for Protocol Buffer (protobuf) and gRPC, also the plug in has an option to check SQL injection (SQLi).
+description = A Zeek plug in which decodes Protocol Buffer (protobuf), also the plug in has an option to check SQL injection (SQLi).
 #aliases = protobuf grpc
 credits = hmadrigal <hfmad@hotmail.com>
 tags = zeek plugin, file analyzer, grpc, protobuf, sqli
