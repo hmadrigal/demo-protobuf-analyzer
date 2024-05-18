@@ -22,38 +22,3 @@ RUN apt-get clean  && \
 ENV DEBIAN_FRONTEND=dialog
 
 ENV PATH=/opt/zeek/bin/:${PATH}
-
-# Define the entrypoint or command to run Zeek
-# ENTRYPOINT ["zeek"]
-# CMD ["-i", "eth0"]
-
-#     git \
-#     libdouble-conversion-dev \
-#     libgoogle-perftools-dev \
-#     libpython3-dev \
-#     libsnappy-dev \
-#     libtbb-dev \
-#     libz-dev \
-#     wget \
-#     xz-utils \
-#     curl \
-#     && apt-get clean && rm -rf /var/lib/apt/lists/*
-
-# # Second stage
-# FROM ubuntu:22.10
-
-# # Install needed tools
-# RUN apt-get update && apt-get install -y \
-#     libdouble-conversion-dev \
-#     libgoogle-perftools-dev \
-#     libpython3-dev \
-#     libsnappy-dev \
-#     libtbb-dev \
-#     libz-dev \
-#     && apt-get clean && rm -rf /var/lib/apt/lists/*
-
-# # Copy zeek libraries from build stage
-# COPY --from=build /zeek/zeek/build/zeek /usr/bin/zeek
-# COPY --from=build /zeek/zeek/build/lib/broker/lib/libbroker.so /usr/lib/libbroker.so
-# COPY --from=build /zeek/zeek/build/lib/broker/lib/libzeek-broker.so /usr/lib/libzeek-broker.so
-# COPY --from=build /zeek/zeek/build/lib/broker/lib/libzeek-analyzer.so /usr/lib/libzeek-analyzer.so
